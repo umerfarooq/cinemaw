@@ -15,17 +15,24 @@
  */
 
 // ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define('DB_NAME', 'cinemaworld');
 
-/** MySQL database username */
-define('DB_USER', 'cinemaworld');
+if (file_exists(dirname(__FILE__) . '/local-config.php')) {
+    include( dirname(__FILE__) . '/local-config.php' );
+} elseif (file_exists(dirname(dirname(dirname(__FILE__))) . '/shared/db-config.php')) {
+    include( dirname(dirname(dirname(__FILE__))) . '/shared/db-config.php' );
+} else {
+    /** The name of the database for WordPress */
+    define('DB_NAME', 'cinemaworld');
 
-/** MySQL database password */
-define('DB_PASSWORD', 'admin');
+    /** MySQL database username */
+    define('DB_USER', 'root');
 
-/** MySQL hostname */
-define('DB_HOST', 'localhost');
+    /** MySQL database password */
+    define('DB_PASSWORD', '');
+
+    /** MySQL hostname */
+    define('DB_HOST', 'localhost');
+}
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
