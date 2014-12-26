@@ -13,9 +13,8 @@
               $('#contact_us').popup();
             });
         </script>
-        <footer>
+        <footer class="row-fluid">
            
-               <div class="row-fluid">
                    <!--  <div id="my_popup1" class="container-fluid">
                         
                         <?php $recent = new WP_Query("page_id=2"); while($recent->have_posts()) : $recent->the_post();?>
@@ -24,7 +23,7 @@
                         <?php endwhile; ?>
                         <p><a class="tb-close-icon my_popup1_close"></a></p>
                     </div> -->
-                    <nav class="navbar navbar-nav footer-nav span9">
+                    <div class="navbar navbar-nav footer-nav span9">
                           <ul class="nav navbar-nav">
                             <li><a href="#">Home</a></li>
                             <li><a href="#" class="about_page_open" >About</a></li>
@@ -38,7 +37,7 @@
                                     //}; end; ?>
                             </li>
                           </ul>
-                    </nav>
+                    </div>
                     <div class="social-icons span3">
                       <ul>
                         <li><a href="https://www.facebook.com/cinemaworldasia" alt="CinemaWorld" target="blank"><img src="<?php bloginfo('template_directory'); ?>/bootstrap/img/fb-icon.png"></a></li>
@@ -64,7 +63,6 @@
                         <li><a href="#" class="contact_us_open">Contact Us</a></li>
                       </ul>
                     </div>
-                </div>
         </footer>
     </div> <!-- /container -->
 

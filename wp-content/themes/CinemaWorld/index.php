@@ -11,8 +11,10 @@
 
 <!-- isert code for index.. -->
      
-     <div id="logo">
-     	<a href="http://localhost/wordpress/"><img src="<?php bloginfo('template_directory'); ?>/bootstrap/img/logo.png"></a>
+     <div id="logo" class="row">
+        <div class="span3">
+     	<a href="http://localhost/cinemaworld/"><img src="<?php bloginfo('template_directory'); ?>/bootstrap/img/logo.png" class="img-responsive"></a>
+        </div>
      </div>
 
     <div  id="wonder_slider">
@@ -26,19 +28,22 @@
 
         });
     </script>
-    <div class="container-fluid main-nav">
-        <ul>
-            <li><a href="#">Sunday See The World</a></li>
-            <li><a href="#">Saturday Festival Picks</a></li>
-            <li><a href="#">Thriller Friday</a></li>
-            <li><a href="#"><a href="#" class="scheduler_open">Schedules</a></li>
-        </ul>
-    </div>
+    <nav class="nav navbar-vertical main-nav span4">
+        <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Sunday See The World</a></li>
+                    <li><a href="#">Saturday Festival Picks</a></li>
+                    <li><a href="#">Thriller Friday</a></li>
+                    <li><a href="#" class="scheduler_open">Schedules</a></li>
+                </ul>
+        </div>
+    </nav>
+
     <!-- for vedio light box -->
-    <div id="video-lightbox" class="container-fluid" >
+   <!--  <div id="video-lightbox" class="container-fluid" >
         <?php echo do_shortcode('[video_lightbox_vimeo5 video_id="113946015?autoplay=1" width="640" height="480" auto_thumb="1"]')?>
         <a href="" id="popout_cross" class="video-lightbox_close"><img src="<?php bloginfo('template_directory'); ?>/bootstrap/img/popout-cross-icon.png" ></a>
-    </div>
+    </div> -->
 
     <!-- scheduler page -->
     <div id="scheduler" class="container-fluid" >
