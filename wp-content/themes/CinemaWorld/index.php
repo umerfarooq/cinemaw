@@ -13,7 +13,7 @@
      
      <div id="logo" class="row">
         <div class="span3">
-     	<a href="http://localhost/cinemaworld/"><img src="<?php bloginfo('template_directory'); ?>/bootstrap/img/logo.png" class="img-responsive"></a>
+     	<a href="http://localhost/cinemaworld/"><img src="<?php bloginfo('template_directory'); ?>/bootstrap/img/logo.png" class="img-responsive logo-image"></a>
         </div>
      </div>
 
@@ -28,16 +28,18 @@
 
         });
     </script>
-    <nav class="nav navbar-vertical main-nav span4">
-        <div class="container-fluid">
+    <div class="row">
+        <div class="span4">
+            <nav class="nav navbar-vertical main-nav">
                 <ul class="nav navbar-nav">
                     <li><a href="#">Sunday See The World</a></li>
                     <li><a href="#">Saturday Festival Picks</a></li>
                     <li><a href="#">Thriller Friday</a></li>
                     <li><a href="#" class="scheduler_open">Schedules</a></li>
                 </ul>
+            </nav>
         </div>
-    </nav>
+    </div>
 
     <!-- for vedio light box -->
    <!--  <div id="video-lightbox" class="container-fluid" >
