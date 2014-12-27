@@ -13,20 +13,26 @@ License URI: http://creativecommons.org/licenses/by-sa/3.0/
 /*...........................*/
 /* Insert custom css */
 @font-face {
-    font-family: sans-narrow_normal;
-    src: url('@{plChildRoot}/cinemaworld/bootstrap/fonts/PT_Sans-Narrow-Web-Regular.ttf') format('truetype');
+  font-family: 'PT-Sans-Bold';
+  src: url("bootstrap/fonts/PT_Sans-Narrow-Web-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
 }
 @font-face {
-    /*font-family: 'sans-narrow_normal';*/
-    scr: url(<?php bloginfo('template_directory'); ?>/bootstrap/fonts/PT_Sans-Narrow-Web-Bold.ttf);
+  font-family: 'PT-Sans-Regular';
+  src: url("bootstrap/fonts/PT_Sans-Narrow-Web-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
+
 html {
 	height: 100%;
 }
 body {
 	background-color: black;
 	height: 100%;
-	font-family: sans-narrow_normal !important;
+	font-family: 'PT-Sans-Regular','PT-Sans-Bold' !important;
+	/*font-family: "PT Sans Narrow" !important;*/
 }
 .container {
 	padding: none;
@@ -56,7 +62,7 @@ div#logo {
 }
 .footer-nav ul > li > a{
 	color: #ffffff !important;
-	font-weight: normal !important;
+	font-weight: bold !important;
 	font-size: 13px;
 	text-shadow:none !important;
 }
@@ -73,9 +79,9 @@ ul#footer_nav2 {
 .footer-nav2 ul > li > a{
 	color: #bebebe !important;
 	font-weight: normal !important;
-	font-size: 9px !important;
+	/*font-size: 9px !important;*/
 	text-shadow:none !important;
-	padding: 0px 6px !important;
+	/*padding: 0px 6px !important;*/
 
 }
 div.social-icons nav ul>li>a {
@@ -296,6 +302,11 @@ ul#subscribe_nav ul
        background-color: #000;
        opacity:0.7;
 }
+.amazingslider-title-1,.amazingslider-description-1   { 
+
+	font-family: 'PT-Sans-Regular','PT-Sans-Bold' !important;
+	font-size: 13px !important;
+}
 .amazingslider-description-1>a{ color:#ffbf00;}
 .amazingslider-bullet-1-0{ width:100px; height:100px;}
 .amazingslider-text-box-1{display:block !important; opacity:1 !important;}
@@ -306,7 +317,7 @@ ul#subscribe_nav ul
 //.amazingslider-text-bg-1 {width: 75%; color:black;}
 //.amazingslider-box-1 :nth-child(3) { display:none !important;}
 
-@media only screen and (max-width: 700px){
+@media only screen and (min-width: 300px) and (max-width: 700px){
 	footer {
 	z-index:1000; 
 	position:absolute;
@@ -315,15 +326,20 @@ ul#subscribe_nav ul
 
 	/*background-image: url("bootstrap/img/footer-bg.jpeg");*/
 	overflow: hidden;
-	width: 97% !important;
+	width: 94% !important;
 	opacity: 0.7;
-   }
+   	}
+	.footer-nav2 ul > li > a {
+		font-size: 9px !important;
+		padding: 0px 6px !important;
+	}
+
     nav.main-nav ul li a,nav.main-nav ul li a:after,nav.main-nav ul li a:hover ,nav.main-nav ul li a:focus{
 	color: #fff !important;
 	text-transform: none;
-	/*font-weight: bold;*/
 	background: transparent;
-    font-size: 10px;
+    font-size: 12px;
+    font-weight: bold;
     }
     nav.main-nav {
     	top: 10%;
@@ -387,7 +403,53 @@ ul#subscribe_nav ul
    	height: 20px;
    }
 }
-@media only screen and (min-width: 700px){
+@media only screen and (min-width: 710px) and (max-width: 1080px){
+	
+	.amazingslider-img-1 ,.amazingslider-box-1{
+		height:777px !important;
+	}
+
+	.amazingslider-img-1 >img{
+
+	height:857px !important;
+	}
+   .amazingslider-nav-1{
+    	top: 74% !important;
+    }
+   .amazingslider-text-wrapper-1 {
+   		left:60% !important;
+   		 bottom: 30% !important;
+   		  width:40%!important;
+   }
+   nav.main-nav {
+    	top: 20%
+    }
+    nav.main-nav ul li a,nav.main-nav ul li a:after,nav.main-nav ul li a:hover ,nav.main-nav ul li a:focus{
+	color: #fff !important;
+	text-transform: none;
+	font-weight: bold;
+	background: transparent;
+    font-size: 20px;
+    }
+
+    footer {
+	z-index:1000; 
+	position:absolute;
+	background-color: #000;
+		top: 89%;
+
+	/*background-image: url("bootstrap/img/footer-bg.jpeg");*/
+	overflow: hidden;
+	width: 97% !important;
+	opacity: 0.7;
+    }
+    .footer-nav2 ul > li > a {
+		font-size: 12px !important;
+		padding: 2px 11px !important;
+	}
+
+}
+@media only screen and (min-width: 1060px){
 	footer {
 	z-index:1000; 
 	position:absolute;
@@ -396,16 +458,26 @@ ul#subscribe_nav ul
 
 	/*background-image: url("bootstrap/img/footer-bg.jpeg");*/
 	overflow: hidden;
-	width: 87% !important;
+	width: 97% !important;
 	opacity: 0.7;
     }
+    .footer-nav2 ul{
+    	padding-left: 75px;
+    }
+    .social-icons {
+    	padding-left: 20px;
+    }
+    .footer-nav2 ul > li > a {
+		font-size: 13px !important;
+		padding: 3px 11px !important; 
+	}
     nav.main-nav {
-    	top: 20%
+    	top: 20%;
     }
     nav.main-nav ul li a,nav.main-nav ul li a:after,nav.main-nav ul li a:hover ,nav.main-nav ul li a:focus{
 	color: #fff !important;
 	text-transform: none;
-	/*font-weight: bold;*/
+	font-weight: bold;
 	background: transparent;
     font-size: 20px;
     }
