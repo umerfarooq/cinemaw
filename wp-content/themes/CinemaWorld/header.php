@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,16 +11,18 @@
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
-    <?php wp_enqueue_script("jquery"); ?>
-    <!-- for custom popups -->
-    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-    
-    <script src="http://vast-engineering.github.io/jquery-popup-overlay/jquery.popupoverlay.js"></script>
+ 
     <?php wp_head(); ?>
+    <script src="http://vast-engineering.github.io/jquery-popup-overlay/jquery.popupoverlay.js"></script>
+    <link href="<?php bloginfo('template_url'); ?>/bootstrap/css/tiksluscarousel.css" rel="stylesheet">
+    <script src="<?php bloginfo('template_url'); ?>/bootstrap/js/tiksluscarousel.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/bootstrap/js/functions.js"></script>    
   </head>
 
-  <body>
-
-    
-     <div class="container-fluid">
+  <body>    
+    <div class="container-fluid">
+      <div id="logo" class="row">
+        <div class="span3">
+          <a href="/"><img src="<?php bloginfo('template_directory'); ?>/bootstrap/img/logo.png" class="img-responsive logo-image"></a>
+        </div>
+      </div>

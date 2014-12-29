@@ -1,17 +1,17 @@
     
-
+</div> <!-- /container -->
      <script type="text/javascript"> onload="initLightbox()"
-            $(document).ready(function() {
+            // $(document).ready(function() {
 
-              // Initialize the plugin
-              $('#subscribe_page').popup();
+            //   // Initialize the plugin
+            //   $('#subscribe_page').popup();
               
-              $('#about_page').popup();
+            //   $('#about_page').popup();
 
-              $('#privacy_policy').popup();
-              $('#terms_of_use').popup();
-              $('#contact_us').popup();
-            });
+            //   $('#privacy_policy').popup();
+            //   $('#terms_of_use').popup();
+            //   $('#contact_us').popup();
+            // });
         </script>
         <footer class="row-fluid">
            
@@ -69,7 +69,7 @@
                     </nav>  
                   </div>
         </footer>
-    </div> <!-- /container -->
+    
 
     <?php wp_footer(); ?>
   </body>
