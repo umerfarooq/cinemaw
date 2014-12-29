@@ -325,7 +325,7 @@ slideTo(rotate_to);
 				 	resetProgressBar();
 					resetzoom();
 					;
-			 var li = ul.find("li:nth-child('" + start_from + "')");
+			 var li = ul.find("li:nth-child(" + start_from + ")");
 			 	 animateProgressBar();
 			 switch(options.type){
 			 case "slide":

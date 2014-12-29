@@ -15,7 +15,7 @@ function wpbootstrap_scripts_with_jquery()
 {
 
 	wp_deregister_script('jquery');
-  wp_register_script('jquery',  get_template_directory_uri() . '/bootstrap/js/jquery.min.js');
+  wp_register_script('jquery',  get_template_directory_uri() . '/bootstrap/js/jquery-1.11.2.min.js');
   wp_enqueue_script('jquery');
 
 	// Register the script like this for a theme:
