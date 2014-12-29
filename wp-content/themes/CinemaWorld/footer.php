@@ -37,10 +37,10 @@
                             </ul>
                           </nav>  
                         </div>
-                      </footer>
+            </footer>
 
-
-                      <?php wp_footer(); ?>
-                      </div> <!-- /container -->
-                    </body>
-                    </html>
+          <?php include (TEMPLATEPATH . '/template-pages/static-page.php'); ?>  
+          <?php wp_footer(); ?>
+          </div> <!-- /container -->
+        </body>
+        </html>

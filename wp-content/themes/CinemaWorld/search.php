@@ -6,69 +6,62 @@
  * @subpackage BootstrapWP
  */
 get_header(); ?>
-<div class="container">
+<div class="container search-results">
     <div class="row">
-        <div class="span12">
-            <?php if (function_exists('bootstrapwp_breadcrumbs')) {
-                bootstrapwp_breadcrumbs();
-            } ?>
-        </div>
-    </div><!--/.row -->
+        
+    <div class="search-header-image img-responsive"><img src="<?php bloginfo('template_directory'); ?>/bootstrap/img/title-movies.png"></div>
 
 	<div class="row content">
-        <div class="span8">
-            <?php if (have_posts()) : ?>
-                 <header class="post-title">
-                     <h1><?php printf( __('Search Results for: %s', 'bootstrapwp'),'<span>' . get_search_query() . '</span>'); ?></h1>
-                 </header>
+                <?php  $allsearch = &new WP_Query("s=$s&showposts=-1");?>
+                
+                <!-- LIST RESULTS -->
+                <?php if ($allsearch->have_posts()) : ?>
+                    <?php
+                        $key = wp_specialchars($s, 1);
+                        $count = $allsearch->post_count; 
+                        _e('<h2 class="results-header">');
+                        _e('Showing results for ');
+                        _e('"');
+                        echo $key;
+                        _e('"'); 
+                        _e(' &mdash; found ');
+                        echo $count . ' '; 
+                        _e('movies</h2>');
+                        wp_reset_query(); 
+                    ?>
+                <?php while ($allsearch->have_posts()) : $allsearch->the_post(); ?>
+                <section>   
+                    <div class="col-md-2">
+                        <div class="movie-image img-responsive"><img src="<?php the_field('movie_image');?>" width="150px" height="200px" ></div>
+                        <a href="#" title="<?php the_title();?>" class="movies_<?php echo (string)get_the_ID();?>_open">
+                        <div class="movie-title"><?php the_title();?></div></a>
+                        <span class="search-time"><?php the_time('F, j, Y') ?></span>
+                    </div>            
+                </section>
+                <!-- / LIST RESULTS -->
+                <script type="text/javascript">
+                         $(document).ready(function() {
+                            $('#movies_<?php echo (string)get_the_ID();?>').popup();
+                        };
+                </script>
+                <?php endwhile; else: ?>
 
-    		  <?php while (have_posts()) : the_post(); ?>
-                <div <?php post_class(); ?>>
-                    <a href="<?php the_permalink(); ?>" title="<?php the_title();?>">
-                        <h3><?php the_title();?></h3>
-                    </a>
-                    <p class="meta">
-                        <?php echo bootstrapwp_posted_on();?>
-                    </p>
+                <!-- 404 SEARCH -->
+                <div class="search-fail">
+                    <?php _e("<p>Oops... We couldn't find what you were searching for. Please try again</p>"); ?>
+                    <div class="search-page-form">Search : <?php get_search_form(); ?></div>
+                </div>
+                <!-- / 404 SEARCH -->
+                <script type="text/javascript">
+                         $(document).ready(function() {
+                            $('#movies_<?php echo $id;?>').popup();
+                        }
+                </script>
+                <?php endif; ?>
+        
 
-                    <div class="row">
-                        <?php // Post thumbnail conditional display.
-                        if ( bootstrapwp_autoset_featured_img() !== false ) : ?>
-                            <div class="span2">
-                                <a href="<?php the_permalink(); ?>" title="<?php  the_title_attribute( 'echo=0' ); ?>">
-                                    <?php echo bootstrapwp_autoset_featured_img(); ?>
-                                </a>
-                            </div>
-                            <div class="span6">
-                        <?php else : ?>
-                            <div class="span8">
-                        <?php endif; ?>
-                                <?php the_excerpt(); ?>
-                            </div>
-                    </div><!-- /.row -->
+          
 
-                    <hr/>
-                </div><!-- /.post_class -->
-             <?php endwhile; ?>
-
-            <?php else : ?>
-            	<div class="row content">
-                    <div class="span8">
-                        <header class="post-title">
-                            <h1><?php _e('No Results Found', 'bootstrapwp'); ?></h1>
-                        </header>
-                        <p class="lead">
-                            <?php _e(
-                                'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps you should try again with a different search term.',
-                                'bootstrapwp'); ?>
-                        </p>
-                        <div class="well">
-                            <?php get_search_form(); ?>
-                        </div><!--/.well -->
-             <?php endif;?>
-
-             <?php bootstrapwp_content_nav('nav-below'); ?>
+             <?#php bootstrapwp_content_nav('nav-below'); ?>
         </div>
-
-    <?php get_sidebar(); ?>
-    <?php get_footer(); ?>
+<?#php get_footer(); ?>

@@ -322,3 +322,22 @@ ul#subscribe_nav ul
     background:  #424242;
     border-radius: 0;
 }
+.search-results h2 {
+	font-size: 20px;
+	color: #ffffff;
+	padding: 10px;
+}
+.search-fail{
+	font-size: 18px;
+	color: #ffffff;
+	padding: 20px;
+}
+.search-results {
+	margin:10% 5% 10%;
+	padding:30px !important; 
+	position:absolute;
+}
+.movie-title {
+	font-size: 20px;
+	color: #ffffff;
+}
