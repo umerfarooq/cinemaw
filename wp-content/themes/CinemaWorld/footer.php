@@ -1,7 +1,4 @@
-    
-</div> <!-- /container -->
-
-    <footer class="row-fluid">
+        <footer class="row-fluid">
 
                       <div class="col-lg-6 col-lg-offset-1">  
                         <nav class="nav navbar footer-nav">
@@ -44,5 +41,6 @@
 
 
                       <?php wp_footer(); ?>
+                      </div> <!-- /container -->
                     </body>
                     </html>

@@ -9,8 +9,8 @@
 ?>
 <?php get_header(); ?>
 
-<div class='row'>
-    <div id='slider' class='col-xs-12 col-lg-12'>
+<div class='row-fluid'>
+    <div id='slider'>
         <ul>
             <?php
             // The Query
@@ -21,7 +21,7 @@
                 <li>
                     <img src="<?php the_field('movie_image'); ?>" class="img-responsive" >
                 </li>
-                
+
             <?php 
             endwhile;
 
