@@ -47,11 +47,17 @@
                             </a>
                         </div>
                         <div class='col-lg-4 col-lg-offset-2'>
-                            <a href='JavaScript:void(0);' onclick="$('#movie_<?php echo get_the_ID(); ?>').popup();">
+                            <a href='<?php echo the_field("video_url")?>' class="wplightbox" data-width="640" data-height="360" >
                                 <span class='caption-action trailer'  ></span>
                                 <label>Watch trailer</label>
                             </a>
                         </div>
+                        <!-- <div class='col-lg-4 col-lg-offset-2'>
+                            <a href='JavaScript:void(0);' onclick="$('#movie_<?php echo get_the_ID(); ?>').popup();">
+                                <span class='caption-action trailer'  ></span>
+                                <label>Watch trailer</label>
+                            </a>
+                        </div> -->
                     </div>
 
                 </div>                   

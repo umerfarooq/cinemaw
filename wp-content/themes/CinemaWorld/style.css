@@ -414,3 +414,7 @@ nav.subscribe-nav ul ul
 	font-size: 20px;
 	color: #ffffff;
 }
+
+#html5-watermark > a >div {
+	display: none !important;
+}
