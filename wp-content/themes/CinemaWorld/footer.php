@@ -3,10 +3,10 @@
                       <div class="col-lg-6 col-lg-offset-1">  
                         <nav class="nav navbar footer-nav">
                           <ul class="nav navbar-nav">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#" class="about_page_open" >About</a></li>
-                            <li><a href="#" class="subscribe_page_open">Subscribe</a></li>
-                            <li><a href="#">Search</a></li>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="JavaScript:void(0);" class="about_page_open" >About</a></li>
+                            <li><a href="JavaScript:void(0);" class="subscribe_page_open">Subscribe</a></li>
+                            <li><a href="JavaScript:void(0);">Search</a></li>
                             <li id="search_form">
                              <?php
                              get_search_form(); 
@@ -30,16 +30,17 @@
                         <div class="col-lg-4 col-lg-offset-7">
                           <nav class="nav navbar pull-right">  
                             <ul id="footer_nav2" class="nav navbar-nav">
-                              <li><a>&copy;CinemaWorld</a></li>
-                              <li><a href="#" class="privacy_policy_open">Privacy Policy</a></li>
-                              <li><a href="#" class="terms_of_use_open" >Terms of Use</a></li>
-                              <li><a href="#" class="contact_us_open">Contact Us</a></li>
+                              <li><a href="JavaScript:void(0);">Copyright &copy; 2014 CinemaWorld</a></li>
+                              <li><a href="JavaScript:void(0);" class="privacy_policy_open">Privacy Policy</a></li>
+                              <li><a href="JavaScript:void(0);" class="terms_of_use_open" >Terms of Use</a></li>
+                              <li><a href="JavaScript:void(0);" class="contact_us_open">Contact Us</a></li>
                             </ul>
                           </nav>  
                         </div>
             </footer>
 
           <?php include (TEMPLATEPATH . '/template-pages/static-page.php'); ?>  
+          <?php include (TEMPLATEPATH . '/template-pages/subscribe-page.php'); ?>  
           <?php wp_footer(); ?>
           </div> <!-- /container -->
         </body>

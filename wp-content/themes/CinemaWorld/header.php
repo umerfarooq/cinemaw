@@ -13,8 +13,8 @@
     <![endif]-->
  
     <?php wp_head(); ?>
-    <script src="http://vast-engineering.github.io/jquery-popup-overlay/jquery.popupoverlay.js"></script>
     <link href="<?php bloginfo('template_url'); ?>/bootstrap/css/tiksluscarousel.css" rel="stylesheet">
+    <script src="<?php bloginfo('template_url'); ?>/bootstrap/js/jquery.popupoverlay.js"></script>
     <script src="<?php bloginfo('template_url'); ?>/bootstrap/js/tiksluscarousel.js"></script>
     <script src="<?php bloginfo('template_url'); ?>/bootstrap/js/functions.js"></script>    
   </head>

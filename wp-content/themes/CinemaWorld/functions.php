@@ -33,6 +33,50 @@ if (!is_admin())
 // add filter to remove admin-bar
 add_filter( 'show_admin_bar', '__return_false' );
 
+/**
+ * Get the assets directory.
+ * @param {String} [$directory] Optional extra directory to append to the path.
+ * @return {String} The asset path.
+ */
+function get_assets_directory($directory) {
+  $path = get_stylesheet_directory_uri() . '/bootstrap';
+  
+  if (isset($directory)) {
+    $path = $path . '/' . $directory;
+  }
+  
+  return $path;
+}
+
+/**
+ * Echo the asset directory.
+ * @param {String} [$directory] Optional extra directory to append to the path.
+ * @uses get_assets_directory();
+ */
+function assets_directory($directory) {
+  echo get_assets_directory($directory);
+}
+
+/**
+ * Get the specified asset URL.
+ * @param {String} $dir The directory from which to grab the asset.
+ * @param {String} $file The filename of the asset.
+ * @uses get_assets_directory();
+ */
+function get_asset($dir, $file) {
+  return get_assets_directory($dir) . '/' . $file;
+}
+
+/**
+ * Echo the specified asset URL.
+ * @param {String} $dir The directory from which to grab the asset.
+ * @param {String} $file The filename of the asset.
+ * @uses get_asset();
+ */
+function asset($dir, $file) {
+  echo get_asset($dir, $file);
+}
+
 // function CinemaWorld_widgets_init() {
 // 		register_sidebar(
 // 		        array(

@@ -29,13 +29,13 @@
 
 
 	<!-- subscription page -->
-	<div id="subscribe_page" class="container-fluid">
+	<!-- <div id="subscribe_page" class="container-fluid">
 	    <?php $recent = new WP_Query("pagename=subscribe-page"); while($recent->have_posts()) : $recent->the_post();?>
 	    	<h3 class="subscribe-title"><?php the_title(); ?></h3>
 	    	<p class="subscribe-description"><?php the_content(); ?></p>
 		<?php endwhile; ?>
 		<a href="" id="popout_cross" class="subscribe_page_close"><img src="<?php bloginfo('template_directory'); ?>/bootstrap/img/popout-cross-icon.png" ></a>
-	</div>
+	</div> -->
 
 
 	<!-- privacy policy page -->

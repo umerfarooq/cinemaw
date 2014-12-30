@@ -38,6 +38,13 @@ body {
 	/*font-family: "PT Sans Narrow" !important;*/
 }
 
+footer {
+	position: absolute;
+	bottom: 0;
+	background-color: #000;
+	border-top: 1px solid #333333;
+}
+
 .container {
 	padding: 0 !important;
 }
@@ -50,6 +57,7 @@ body {
 
 .navbar {
 	margin-bottom: 0 !important;
+	min-height: 0;
 }
 
 .navbar-nav > li > a {
@@ -73,13 +81,17 @@ body {
 nav.main-nav {
 	position: absolute;
 	background: transparent;
-	color: white;
-	border: none;
-	left: 5%;
+	left: 2%;
+	top: 17%;
 }
+
 nav.main-nav ul li {
-	padding-top: 10px;
 	list-style-type: none;
+}
+
+nav.main-nav ul li a {
+	color: white;
+	font-size: 30px;
 }
 
 @import url('bootstrap/css/media-sensitive.css'); 
@@ -96,6 +108,12 @@ div#logo {
 /* Landing Page */
 
 /* Slider Customisation */
+
+#slider {
+	position: absolute !important;
+	bottom: 10%;
+}
+
 .msg.error {
 	display: none !important;
 }
@@ -110,6 +128,10 @@ div#logo {
 	bottom: 5%;
 	width: 100% !important;
 	padding: 1% 7%;
+}
+
+.thumbnails_wrapper .custom-caption {
+	display: none !important;
 }
 
 .tiksluscarousel .nav_right {
@@ -137,6 +159,55 @@ div#logo {
 
 .progress {
 	display: none !important;
+}
+
+.custom-caption {
+	background-color: rgba(7, 7, 4, 0.75) !important;
+  bottom: 25%;
+  color: #fff;
+  font-size: 1.2em;
+  height: 30%;
+  left: 65%;
+  margin: auto;
+  padding: 1.2em;
+  position: absolute;
+  width: 30%;
+}
+
+.custom-caption h1 {
+	margin: 0 !important;
+	font-size: 30px !important;
+}
+
+.custom-caption a img {
+	width: 23px !important;
+	height: 23px !important; 	
+}
+
+.custom-caption .caption-action {
+	display: block; 
+	width: 23px; 
+	height: 23px;
+	float: left;
+}
+
+.custom-caption .caption-action.read {
+	background-image: url('bootstrap/img/read-more-icon.png'); 	
+}
+
+.custom-caption .caption-action.trailer {
+	background-image: url('bootstrap/img/watch-trailer-icon.png'); 	
+}
+
+.custom-caption label {
+	float: left;
+	color: #ffbf00;
+	font-weight: normal;
+	margin-left: 5px;
+}
+
+.carousel > li {
+	transform: scale(1) !important;
 }
 
 /*Style custom popup*/
