@@ -7,10 +7,10 @@
  * @subpackage CinemaWorld
  */
  get_header(); ?>
-<div id="subscribe_page" class="container-fluid popup">
+<div id="" class="container-fluid popup subscribe-page">
 	<?php $recent = new WP_Query("pagename=subscribe"); while($recent->have_posts()) : $recent->the_post();?>
 	
-    <h3 class="subscribe-title"><?php the_title(); ?></h3>
+    <h2 class="subscribe-title"><?php the_title(); ?></h2>
 	<p>Get CinemaWorld through your local pay TV operator in your countries:</p>
 	<nav class="navbar navbar-vertical subscribe-nav">
         <ul class="nav navbar"> 
@@ -36,6 +36,7 @@
         <?php endif;?>
         </ul>
     </nav>
-    <a href="" id="popout_cross" class="subscribe_page_close"><img src="<?php bloginfo('template_directory'); ?>/bootstrap/img/popout-cross-icon.png" ></a>
+    <!-- <a href="" id="popout_cross" class="subscribe_page_close"><img src="<?php bloginfo('template_directory'); ?>/bootstrap/img/popout-cross-icon.png" ></a> -->
     <?php endwhile?>
 </div>
+<?php get_footer();?>

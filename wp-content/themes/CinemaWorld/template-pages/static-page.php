@@ -19,13 +19,13 @@
 	</div>
 
 	<!-- about page -->
-	<div id="about_page" class="container-fluid popup">
+	<!-- <div id="about_page" class="container-fluid popup">
 	 	<?php $recent = new WP_Query("pagename=about-page"); while($recent->have_posts()) : $recent->the_post();?>
 	    	<h3 class="about-title"><?php the_title(); ?></h3>
 	    	<p class="about-description"><?php the_content(); ?></p>
 		<?php endwhile; ?>
 		<a href="JavaScript:void(0);" id="popout_cross" class="about_page_close"></a>
-	</div>
+	</div> -->
 
 
 	<!-- subscription page -->

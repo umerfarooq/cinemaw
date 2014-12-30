@@ -4,8 +4,8 @@
                         <nav class="nav navbar footer-nav">
                           <ul class="nav navbar-nav">
                             <li><a href="/">Home</a></li>
-                            <li><a href="JavaScript:void(0);" class="about_page_open" >About</a></li>
-                            <li><a href="JavaScript:void(0);" class="subscribe_page_open">Subscribe</a></li>
+                            <li><a href="<?php echo get_page_link( get_page_by_title('about us')->ID ); ?>" class="" >About</a></li>
+                            <li><a href="<?php echo get_page_link( get_page_by_title('subscribe')->ID ); ?>" class="">Subscribe</a></li>
                             <li><a href="JavaScript:void(0);">Search</a></li>
                             <li id="search_form">
                              <?php
@@ -38,9 +38,9 @@
                           </nav>  
                         </div>
             </footer>
-
+          <?php include (TEMPLATEPATH . '/navbar.php'); ?>  
           <?php include (TEMPLATEPATH . '/template-pages/static-page.php'); ?>  
-          <?php include (TEMPLATEPATH . '/template-pages/subscribe-page.php'); ?>  
+          <?#php include (TEMPLATEPATH . '/template-pages/subscribe-page.php'); ?>  
           <?php wp_footer(); ?>
           </div> <!-- /container -->
         </body>

@@ -239,7 +239,7 @@ div#scheduler {
 		
 	}
 
-/*about page popup*/
+/* page popup*/
 .popup {
 	background-color: black;
 	color: #fff;
@@ -323,8 +323,20 @@ input#search_form_field {
 }
 
 
-/*subscribe page */
-
+/*subscribe && about page */
+.about-page {
+	margin-top: 7%;
+}
+.subscribe-page {
+	margin-top: 7%;
+}
+.subscribe-page h2 ,.about-page h2{
+	color: #ffbf00 ;
+}
+.subscribe-page p , .about-page p {
+	color: #ffffff;
+	font-size: 15px;
+}
 nav.subscribe-nav ul
 {
     margin: 0;
