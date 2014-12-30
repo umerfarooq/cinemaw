@@ -11,7 +11,8 @@
 	<?php $recent = new WP_Query("pagename=subscribe"); while($recent->have_posts()) : $recent->the_post();?>
 	
     <h3 class="subscribe-title"><?php the_title(); ?></h3>
-	<nav class="navbar navbar-vertical">
+	<p>Get CinemaWorld through your local pay TV operator in your countries:</p>
+	<nav class="navbar navbar-vertical subscribe-nav">
         <ul class="nav navbar"> 
         <?php if( have_rows('country') ):
         while ( have_rows('country') ) : the_row();?>
@@ -22,7 +23,7 @@
                                 
                     <?php while(have_rows('service')) : the_row();?>
                     
-                    <li><a href="<?php echo (string)the_sub_field('provider_url');?>"><?php the_sub_field('provider_name');?></a></li>
+                    <li><a href="http://<?php echo (string)the_sub_field('provider_url');?>" target="blank"><?php the_sub_field('provider_name');?></a></li>
                     
                     <?php endwhile ;#endif ?>
 
