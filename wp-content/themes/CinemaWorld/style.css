@@ -41,8 +41,9 @@ body {
 footer {
 	position: absolute;
 	bottom: 0;
-	background-color: #000;
+	background-color: rgba(7,4,4,0.75);;
 	border-top: 1px solid #333333;
+	width: 100%;
 }
 
 .container {
@@ -111,7 +112,7 @@ div#logo {
 
 #slider {
 	position: absolute !important;
-	bottom: 10%;
+	bottom: 0;
 }
 
 .msg.error {
@@ -125,9 +126,9 @@ div#logo {
 .thumbnails_wrapper {
 	background: rgba(7,7,4,0.5) !important;
 	position: absolute !important;
-	bottom: 5%;
+	bottom: 12%;
 	width: 100% !important;
-	padding: 1% 7%;
+	padding: 0.3% 7%;
 }
 
 .thumbnails_wrapper .custom-caption {
@@ -136,7 +137,7 @@ div#logo {
 
 .tiksluscarousel .nav_right {
 	background-image: url("bootstrap/img/right-arrow.png");
-  top: 85% !important;
+  top: 80% !important;
   height: 70px !important;
   width: 40px !important;
   opacity: 1 !important;
@@ -148,7 +149,7 @@ div#logo {
 
 .tiksluscarousel .nav_left {
 	background-image: url("bootstrap/img/left-arrow.png");
-	top: 85% !important;
+	top: 80% !important;
 	height: 70px !important;
   width: 40px !important;
   opacity: 1 !important;
@@ -163,15 +164,15 @@ div#logo {
 
 .custom-caption {
 	background-color: rgba(7, 7, 4, 0.75) !important;
-  bottom: 25%;
+  bottom: 24%;
   color: #fff;
-  font-size: 1.2em;
-  height: 30%;
-  left: 65%;
+  font-size: 14px;
+  height: 25%;
+  left: 68%;
   margin: auto;
   padding: 1.2em;
   position: absolute;
-  width: 30%;
+  width: 28%;
 }
 
 .custom-caption h1 {
@@ -204,6 +205,7 @@ div#logo {
 	color: #ffbf00;
 	font-weight: normal;
 	margin-left: 5px;
+	cursor: pointer;
 }
 
 .carousel > li {
@@ -212,6 +214,9 @@ div#logo {
 
 /*Style custom popup*/
 #popout_cross{
+	background: url(bootstrap/img/popout-cross-icon.png) no-repeat;
+	width: 18px;
+	height: 17px;
 	top: 1%;
 	right: 1%;
 	z-index: 1000111;
@@ -235,76 +240,57 @@ div#scheduler {
 	}
 
 /*about page popup*/
-div#about_page {
+.popup {
 	background-color: black;
 	color: #fff;
 	width: 50%;
-	max-height: 65%;
+	min-height: 30%;
+	max-height: 70%;
 	height: auto;
 	left: 15%;
-	overflow: auto-scroll;
+	overflow: auto;
+	padding: 2% !important;
 }
-	.about-title {
-		color: #ffbf00;
-	}
-/*subscribe page popup*/
-div#subscribe_page {
-	background-color: black;
-	color: #fff;
-	width: 50%;
-	max-height: 66%;
-	height: auto;
-	left: 15%;
-	overflow: scroll;
+
+.popup h3 {
+	color: #ffbf00;
+	margin: 0;
 }
-	.subscribe-title {
-		color: #ffbf00;
-	}
 
-/*privacy policy popup*/
-div#privacy_policy {
-	background-color: black;
-	color: #fff;
-	width: 50%;
-	max-height: 65%;
-	height: auto;
-	left: 15%;
-	overflow: scroll;
-
+.popup.light {
+	background-color: #cccccc;
+	max-height: 90%;
 }
-	.privacy-policy-title {
-		color: #ffbf00;
 
-	}
-/*terms of use popup*/
-div#terms_of_use {
-	background-color: black;
-	color: #fff;
-	width: 50%;
-	max-height: 65%;
-	height: auto;
-	left: 15%;
-	overflow: scroll;
+.popup.light, .popup.light h3 {
+	color: black;
 }
-	.terms-of-use-title {
-		color: #ffbf00;
 
-	}
-/*contact us popup */
-div#contact_us {
-	background-color: black;
-	color: #fff;
-	width: 50%;
-	max-height: 65%;
-	height: auto;
-    left: 15%;
-	overflow: auto-scroll;
+.popup.navtype {
+	left: unset;
+	right: 28%;
+	bottom: 16%;
+	background-color: rgba(0, 0, 0 , 0.55);
+	width: 35%;
+	min-height: 25%;
+	max-height: 50%;
 }
-	.contact-us-title {
-		color: #ffbf00;
 
-	}
+.popup.navtype .trailer {
+	background-image: url('bootstrap/img/watch-trailer-icon.png'); 	
+	display: block; 
+	width: 23px; 
+	height: 23px;
+	float: left;
+}
 
+.popup.navtype label {
+	float: left;
+	color: #ffbf00;
+	font-weight: normal;
+	margin-left: 5px;
+	cursor: pointer;
+}
 
 /*seach form style*/
 

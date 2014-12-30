@@ -7,7 +7,7 @@
  * @subpackage CinemaWorld
  */
  get_header(); ?>
-<div id="subscribe_page" class="container-fluid ">
+<div id="subscribe_page" class="container-fluid popup">
 	<?php $recent = new WP_Query("pagename=subscribe"); while($recent->have_posts()) : $recent->the_post();?>
 	
     <h3 class="subscribe-title"><?php the_title(); ?></h3>
