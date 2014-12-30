@@ -267,7 +267,7 @@ input#search_form_field {
 
 /*subscribe page */
 
-ul#subscribe_nav
+nav.subscribe-nav ul
 {
     margin: 0;
     padding: 0;
@@ -275,7 +275,7 @@ ul#subscribe_nav
     width: 40%;
 }
 
-ul#subscribe_nav li
+nav.subscribe-nav ul li
 {
     background-color: #424242;
 
@@ -283,7 +283,7 @@ ul#subscribe_nav li
 }
 
 
-ul#subscribe_nav >li> a
+nav.subscribe-nav ul >li> a
 {
     text-decoration: none;
     color: #ffbf00 ;
@@ -295,24 +295,25 @@ ul#subscribe_nav >li> a
     /*margin-top: -5px;*/
 }
 
-ul#subscribe_nav li a:hover,ul#subscribe_nav li a:after
+nav.subscribe-nav ul li a:hover,nav.subscribe-nav ul li a:after
 {
-    background: #424242;
+    background: #424242 !important;
+    color: #ffffff;
 }
-ul#subscribe_nav li a:focus {
+nav.subscribe-nav ul li a:focus {
 	color: #ffffff;
-    background: #424242;
+    background: #424242 !important;
 
 }
 
 
-    ul#subscribe_nav ul li a
+    nav.subscribe-nav ul ul li a, nav.subscribe-nav ul ul li a:hover
     {
         background: #424242;
         color: #ffffff;
     }
 
-ul#subscribe_nav ul
+nav.subscribe-nav ul ul
 {
     width: 80%;
     /*display: block;*/
