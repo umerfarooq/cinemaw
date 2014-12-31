@@ -30,16 +30,16 @@ get_header(); ?>
             
                
                 <div class="col-md-2 movie-container">
-                    <div class="row">
-                    <div class="movie-image">
-                        <img src="<?php the_field('movie_image');?>" class='img-responsive responsive_img' >
+                  <div class="row">
+                    <div class="movie-image thumbnail">
+                      <img src="<?php the_field('movie_image');?>" class='img-responsive responsive_img' >
                     </div>
-                    </div>
-                    <div class="row">
+                  </div>
+                  <div class="row">
                     <a href="<?php the_permalink(); ?>" title="<?php the_title();?>" class="load_post">
-                        <span class="movie-title"><?php the_title();?> (<?php the_field('movie_original_title'); ?>)</span>
+                      <span class="movie-title"><?php the_title();?> (<?php the_field('movie_original_title'); ?>)</span>
                     </a>
-                </div>            
+                  </div>            
                 </div>
             <!-- / LIST RESULTS -->
              

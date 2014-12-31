@@ -126,7 +126,7 @@ div#logo {
 .thumbnails_wrapper {
 	background: rgba(7,7,4,0.5) !important;
 	position: absolute !important;
-	bottom: 16%;
+	bottom: 14%;
 	width: 100% !important;
 	padding: 0.3% 7%;
 }
@@ -164,10 +164,10 @@ div#logo {
 
 .custom-caption {
 	background-color: rgba(7, 7, 4, 0.75) !important;
-  bottom: 36%;
+  bottom: 24%;
   color: #fff;
   font-size: 14px;
-  height: 29%;
+  height: 22%;
   left: 68%;
   margin: auto;
   padding: 1.2em;
@@ -214,8 +214,6 @@ div#logo {
 
 .tiksluscarousel > ul > li > img {
 	opacity: 0.6;
-	height: 640px !important;
-	/*width: 1020px !important;*/
 }
 
 /*Style custom popup*/
@@ -415,8 +413,12 @@ nav.subscribe-nav ul ul
 	position:relative;
 }
 .movie-title {
-	font-size: 20px;
+	font-size: 18px;
 	color: #ffffff;
+	padding-left: 10px;
+}
+.movie-title:hover, .movie-title:focus, .movie-title:after {
+	color: #ffbf00;
 }
 
 #html5-watermark > a >div {
@@ -568,10 +570,21 @@ div.schedule_right div.schedule_timetable table tr.even {
 }
 
 .movie-container{
-	margin: 1% 2%;
+	margin-left: 2%;
+	margin-bottom: 3%;
+	background-color: #424242;
+	border: 1px solid #cccccc;
 }
 .movie-container img{
-	min-height: 100px;
-	max-height: 150px;
+	/*min-height: 100px;*/
+	/*max-height: 150px;*/
 
+}
+.movie-container a {
+	text-decoration: none;
+}
+.movie-container .thumbnail {
+		padding: 0;
+		border: none;
+		margin-bottom: 10px;
 }
