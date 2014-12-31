@@ -9,7 +9,7 @@ get_header(); ?>
 <div class="container search-results">
 
         <div class="search-header-image img-responsive" style="margin-bottom:-2%;"><img src="<?php bloginfo('template_directory'); ?>/bootstrap/img/title-movies.png"></div>
-            <?php  $allsearch = &new WP_Query("s=$s&showposts=-1&cat=2");?>
+            <?php  $allsearch = &new WP_Query("s=$s&showposts=-1&category_name=movies");?>
 
             <!-- LIST RESULTS -->
             <?php if ($allsearch->have_posts()) : ?>

@@ -415,7 +415,8 @@ nav.subscribe-nav ul ul
 .movie-title {
 	font-size: 18px;
 	color: #ffffff;
-	padding-left: 10px;
+	padding-left: 7px;
+	padding-right: 3px;
 }
 .movie-title:hover, .movie-title:focus, .movie-title:after {
 	color: #ffbf00;
