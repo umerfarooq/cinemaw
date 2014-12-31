@@ -14,4 +14,6 @@
 	<span class="about-content"><?php the_content(); ?></span>
 	<?php endwhile;?>
 </div>
+<?php include (TEMPLATEPATH . '/navbar.php'); ?>  
+
 <?php get_footer();?> 

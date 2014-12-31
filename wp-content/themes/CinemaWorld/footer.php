@@ -38,7 +38,6 @@
                           </nav>  
                         </div>
             </footer>
-          <?php include (TEMPLATEPATH . '/navbar.php'); ?>  
           <?php include (TEMPLATEPATH . '/template-pages/static-page.php'); ?>  
           <?#php include (TEMPLATEPATH . '/template-pages/subscribe-page.php'); ?>  
           <?php wp_footer(); ?>

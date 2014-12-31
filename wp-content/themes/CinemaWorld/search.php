@@ -95,7 +95,6 @@ get_header(); ?>
         <!-- 404 SEARCH -->
         <div class="search-fail">
             <?php _e("<p>Oops... We couldn't find what you were searching for. Please try again</p>"); ?>
-            <div class="search-page-form">Search : <?php get_search_form(); ?></div>
         </div>
         <!-- / 404 SEARCH -->
     <?php endif; ?>

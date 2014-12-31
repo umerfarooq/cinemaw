@@ -96,4 +96,6 @@
   </div>
 </div>
 
+<?php include (TEMPLATEPATH . '/navbar.php'); ?>  
+
 <?php get_footer();?> 

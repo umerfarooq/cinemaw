@@ -39,4 +39,7 @@
     <!-- <a href="" id="popout_cross" class="subscribe_page_close"><img src="<?php bloginfo('template_directory'); ?>/bootstrap/img/popout-cross-icon.png" ></a> -->
     <?php endwhile?>
 </div>
+
+<?php include (TEMPLATEPATH . '/navbar.php'); ?>  
+
 <?php get_footer();?>
