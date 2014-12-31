@@ -12,4 +12,20 @@ jQuery(document).ready(function($){
   $('#sunday_popup').popup();
   $('#saturday_popup').popup();
   $('#friday_popup').popup();
+
+  $("#movie_detail").popup();
+
+  $(".load_post").click( function() {
+    var link = $(this);
+    $.post(link.attr("href"), {
+        post_expander: 1
+      }, function(data) {
+        // link.parents(".entry").html($(data));
+         $(".detail").html($(data));
+           $("#movie_detail").popup('show');
+      }
+    );
+    return false;
+  });
+
 });

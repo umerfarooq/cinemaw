@@ -42,5 +42,15 @@
           <?#php include (TEMPLATEPATH . '/template-pages/subscribe-page.php'); ?>  
           <?php wp_footer(); ?>
           </div> <!-- /container -->
+            
+          <script type="text/javascript">
+            jQuery(document).ready(function($){
+              // $("#movie_detail").popup();
+            });                    
+          </script>
+          <div class="popup light" id="movie_detail">
+          <div class="detail">new</div>
+              
+          </div>
         </body>
         </html>

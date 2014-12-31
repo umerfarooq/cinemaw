@@ -100,7 +100,7 @@ nav.main-nav ul li a {
 /*logo*/
 div#logo {
 	position: absolute;
-	top: 5%;
+	top: 3%;
 	left: 5%;
 	z-index: 1000;
 }
@@ -402,7 +402,7 @@ nav.subscribe-nav ul ul
 .search-results h2 {
 	font-size: 20px;
 	color: #ffffff;
-	padding: 10px;
+	padding: 10px 0 0 0;
 }
 .search-fail{
 	font-size: 18px;
@@ -410,9 +410,9 @@ nav.subscribe-nav ul ul
 	padding: 20px;
 }
 .search-results {
-	margin:8% 5% 10%;
-	padding:30px !important; 
-	position:absolute;
+	margin:9% 5% 10%;
+	padding:10px !important; 
+	position:relative;
 }
 .movie-title {
 	font-size: 20px;
@@ -565,4 +565,13 @@ div.schedule_right div.schedule_timetable table tr.even {
 }
 .schedule_container {
 	padding-top: 10px;
+}
+
+.movie-container{
+	margin: 1% 2%;
+}
+.movie-container img{
+	min-height: 100px;
+	max-height: 150px;
+
 }

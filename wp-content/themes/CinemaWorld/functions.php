@@ -77,19 +77,4 @@ function asset($dir, $file) {
   echo get_asset($dir, $file);
 }
 
-// function CinemaWorld_widgets_init() {
-// 		register_sidebar(
-// 		        array(
-// 		            'name'          => __('Footer Content', 'CinemaWorld'),
-// 		            'id'            => 'footer-content',
-// 		            'description'   => __('Footer text or acknowledgements', 'bootstrapwp'),
-// 		            'before_widget' => '<div id="%1$s" class="widget %2$s">',
-// 		            'after_widget'  => '</div>',
-// 		            'before_title'  => '<h4>',
-// 		            'after_title'   => '</h4>'
-// 		        )
-// 		    );
-// }
-
-// add_action('init', 'CinemaWorld_widgets_init');
 ?>

@@ -41,7 +41,7 @@
 
                     <div class='row'>
                         <div class='col-lg-6'>
-                            <a href='JavaScript:void(0);' class="movie_<?php echo get_the_ID(); ?>_open">
+                            <a href='<?php the_permalink(); ?>' class="load_post">
                                 <span class='caption-action read' ></span>
                                 <label>Read more</label>
                             </a>
@@ -64,46 +64,7 @@
                 </div>                   
             </li>
 
-            <?php  $id=(string)get_the_ID(); ?>
-            <div class="popup light" id="movie_<?php echo $id;?>">
-                <div class='row'>
-                    <div class='col-lg-12'>
-                        <h1><?php the_title();?></h1>
-                    </div>
-                </div>
-
-                <div class='row'>
-                    <div class='col-lg-12'>
-                        <img src="<?php the_field('movie_image');?>" class="movie-image img-responsive" /></img>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class='col-lg-2'>Country : </div>
-                    <div class='col-lg-10'><?php the_field('movie_country');?></div>
-                </div>
-
-                <div class="row">
-                    <div class='col-lg-2'>Genre : </div>
-                    <div class='col-lg-10'><?php the_field('movie_genre');?></div>
-                </div>
-
-                <div class="row">
-                    <div class='col-lg-2'>Cast / Director : </div>
-                    <div class='col-lg-10'><?php the_field('movie_casts');?></div>
-                </div>
-
-                <div class="row">
-                    <div class='col-lg-2'>Duration : </div>
-                    <div class='col-lg-10'><?php the_field('movie_duration');?></div>
-                </div>
-
-                <div class="row" style='margin-bottom: 3%'>
-                    <div class='col-lg-2'>Synopsis : </div>
-                    <div class='col-lg-10'><?php the_field('movie_synopsis');?></div>
-                </div>
-                <a href="JavaScript:void(0);" id="popout_cross" class="movie_<?php echo $id;?>_close"></a>
-            </div>
+            
         <?php 
         endwhile;
 
