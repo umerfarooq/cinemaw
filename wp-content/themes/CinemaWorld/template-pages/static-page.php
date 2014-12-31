@@ -10,13 +10,13 @@
 
 <div class="container-fluid hide">    
 	<!-- scheduler page -->
-	<div id="scheduler" class="container-fluid popup" >
+	<!-- <div id="scheduler" class="container-fluid popup" >
 	    <?php $recent = new WP_Query("pagename=schedule-page"); while($recent->have_posts()) : $recent->the_post();?>
 	        <h3 class="scheduler-page-title"><?php the_title(); ?></h3>
 	        <p class="scheduler-page-description"><?php the_content(); ?></p>
 	    <?php endwhile; ?>
 	    <a href="JavaScript:void(0);" id="popout_cross" class="scheduler_close"></a>
-	</div>
+	</div> -->
 
 	<!-- about page -->
 	<!-- <div id="about_page" class="container-fluid popup">

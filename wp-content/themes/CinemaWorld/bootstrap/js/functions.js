@@ -1,5 +1,5 @@
 jQuery(document).ready(function($){
-	$("#slider").tiksluscarousel({nav:'thumbnails', navIcons: false, prev: '', next: '', autoplayInterval: 70000});
+	$("#slider").tiksluscarousel({nav:'thumbnails', navIcons: false, prev: '', next: '',height:0, width:0, autoplayInterval: 70000});
 
 // Initialize the plugin
 	$('#scheduler').popup();
