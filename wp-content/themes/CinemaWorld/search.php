@@ -8,7 +8,7 @@
 get_header(); ?>
 <div class="container search-results">
 
-        <div class="search-header-image img-responsive" style="margin-bottom:-2%;"><img src="<?php bloginfo('template_directory'); ?>/bootstrap/img/title-movies.png"></div>
+        <div class="search-header-image img-responsive"><img src="<?php bloginfo('template_directory'); ?>/bootstrap/img/title-movies.png"></div>
             <?php  $allsearch = &new WP_Query("s=$s&showposts=-1&category_name=movies");?>
 
             <!-- LIST RESULTS -->
@@ -37,9 +37,14 @@ get_header(); ?>
                   </div>
                   <div class="row">
                     <a href="<?php the_permalink(); ?>" title="<?php the_title();?>" class="load_post">
-                      <span class="movie-title"><?php the_title();?> (<?php the_field('movie_original_title'); ?>)</span>
+                      <span class="movie-title">
+                        <?php the_title();?>
+                        <?php if(get_field('movie_original_title')){?>
+                          (<?php the_field('movie_original_title');?>)
+                        <?php } ;?>
+                      </span>
                     </a>
-                  </div>            
+                  </div>             
                 </div>
             <!-- / LIST RESULTS -->
              

@@ -77,6 +77,19 @@ footer {
 .footer-nav .nav > li > a {
 	font-size: 18px !important;
 }
+footer nav ul li a:hover {
+	background:transparent !important;
+}
+.footer-nav .nav > li > a:hover {
+	color: #ffbf00 !important;
+}
+ul#footer_nav2 li a {
+	color: #888;
+}
+ul#footer_nav2 li a:not(.copy-right):hover {
+	color: #ffffff !important;
+}
+
 
 /*end footer*/
 nav.main-nav {
@@ -93,6 +106,10 @@ nav.main-nav ul li {
 nav.main-nav ul li a {
 	color: white;
 	font-size: 30px;
+}
+nav.main-nav ul li a:hover {
+	color: #ffbf00;
+	text-decoration: none;
 }
 
 @import url('bootstrap/css/media-sensitive.css'); 
@@ -309,14 +326,16 @@ div#scheduler {
 input#search_form_field {
 	background-color: #2E2E2E ;
 	border-radius: 0;
-
+	border-color: #888;
 }
 
 #search_image {
 	height: 21px;
 	width: 16px;
 }
-
+.search-header-image {
+	margin-bottom:-2%;
+}
 #searchform {
 	height: 10px;
 }
@@ -574,13 +593,10 @@ div.schedule_right div.schedule_timetable table tr.even {
 	margin-left: 2%;
 	margin-bottom: 3%;
 	background-color: #424242;
-	border: 1px solid #cccccc;
+	border: 1px solid #ffbf00;
+	padding-bottom: 6px;
 }
-.movie-container img{
-	/*min-height: 100px;*/
-	/*max-height: 150px;*/
 
-}
 .movie-container a {
 	text-decoration: none;
 }

@@ -30,7 +30,7 @@
                         <div class="col-lg-4 col-lg-offset-7">
                           <nav class="nav navbar pull-right">  
                             <ul id="footer_nav2" class="nav navbar-nav">
-                              <li><a href="JavaScript:void(0);">Copyright &copy; 2014 CinemaWorld</a></li>
+                              <li><a class="copy-right">Copyright &copy; 2014 CinemaWorld</a></li>
                               <li><a href="JavaScript:void(0);" class="privacy_policy_open">Privacy Policy</a></li>
                               <li><a href="JavaScript:void(0);" class="terms_of_use_open" >Terms of Use</a></li>
                               <li><a href="JavaScript:void(0);" class="contact_us_open">Contact Us</a></li>
