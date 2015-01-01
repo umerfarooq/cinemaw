@@ -12,7 +12,7 @@ get_header(); ?>
     </div>
 </div>
     
-<div class="row">
+<div class="row content">
     <?php  $allsearch = &new WP_Query("s=$s&showposts=-1&category_name=movies");?>
     <!-- LIST RESULTS -->
     <?php if ($allsearch->have_posts()) : ?>
@@ -20,7 +20,7 @@ get_header(); ?>
         <?php
         $key = wp_specialchars($s, 1);
         $count = $allsearch->post_count; 
-        _e('<div class="col-lg-11 col-lg-offset-1"><h2>');
+        _e('<div class="col-lg-11 col-lg-offset-1 result-notice"><h2>');
         _e('Showing results for ');
         _e('"');
         echo $key;
@@ -30,7 +30,7 @@ get_header(); ?>
         _e('movies</h2></div>');
         ?>
 
-        <div class="col-lg-11 col-lg-offset-1 content">
+        <div class="col-lg-11 col-lg-offset-1 ">
             <div class='row'>
                 <?php while ($allsearch->have_posts()) : $allsearch->the_post(); ?>
               
@@ -53,7 +53,7 @@ get_header(); ?>
         </div>
     <?php else: ?> 
         <!-- 404 SEARCH -->
-        <div class="search-fail col-lg-11 col-lg-offset-1 content">
+        <div class="search-fail col-lg-11 col-lg-offset-1">
             <?php _e("<p>Oops... We couldn't find what you were searching for. Please try again</p>"); ?>
         </div>
         <!-- / 404 SEARCH -->

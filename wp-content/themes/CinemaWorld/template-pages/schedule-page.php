@@ -7,6 +7,13 @@
  * @subpackage CinemaWorld
  */
  get_header(); ?>
+
+ <div class='row'>
+    <div class='col-lg-11 col-lg-offset-1 content'>
+        <?php include (TEMPLATEPATH . '/navbar.php'); ?>  
+    </div>
+</div>
+
 <script type="text/javascript">
   $(document).ready(function(){
     $('#week_day').click(function(){
@@ -20,34 +27,64 @@
       
     <?php 
       // Build a custom query to get posts from future dates.
-      $querystr = "
-          SELECT wp_posts.ID, week(str_to_date(wp_postmeta.meta_value, '%d/%m/%Y')) AS week
-          FROM wp_posts, wp_postmeta 
-          WHERE wp_posts.ID = wp_postmeta.post_id 
-          AND wp_postmeta.meta_key = 'movie_date'
-          AND wp_posts.post_status = 'publish'
-          AND wp_posts.post_type = 'post'
-          AND year(str_to_date(wp_postmeta.meta_value, '%d/%m/%Y')) = year(curdate())
-          AND week(str_to_date(wp_postmeta.meta_value, '%d/%m/%Y')) = 0
-          ORDER BY str_to_date(wp_postmeta.meta_value, '%d/%m/%Y') ASC
-      ";
+      // $querystr = "
+      //     SELECT wp_posts.ID, week(str_to_date(wp_postmeta.meta_value, '%d/%m/%Y')) AS week
+      //     FROM wp_posts, wp_postmeta 
+      //     WHERE wp_posts.ID = wp_postmeta.post_id 
+      //     AND wp_postmeta.meta_key = 'movie_date'
+      //     AND wp_posts.post_status = 'publish'
+      //     AND wp_posts.post_type = 'post'
+      //     AND year(str_to_date(wp_postmeta.meta_value, '%d/%m/%Y')) = year(curdate())
+      //     AND week(str_to_date(wp_postmeta.meta_value, '%d/%m/%Y')) = 0
+      //     ORDER BY str_to_date(wp_postmeta.meta_value, '%d/%m/%Y') ASC
+      // ";
 
-      $movies = $wpdb->get_results($querystr, OBJECT);
+      // $movies = $wpdb->get_results($querystr, OBJECT);
 
-      if($movies) {
-        $querystr = "
-          SELECT wp_postmeta.movie_time, wp_postmeta.movie_title, wp_postmeta.movie_date
-          FROM wp_posts, wp_postmeta 
-          WHERE wp_posts.ID = wp_postmeta.post_id 
-          AND wp_postmeta.meta_key = 'movie_date'
-          AND wp_posts.post_status = 'publish'
-          AND wp_posts.post_type = 'post'
-          AND year(str_to_date(wp_postmeta.meta_value, '%d/%m/%Y')) = year(curdate())
-          AND week(str_to_date(wp_postmeta.meta_value, '%d/%m/%Y')) = 0
-          ORDER BY str_to_date(wp_postmeta.meta_value, '%d/%m/%Y') ASC
-      ";
-      }
-      print_r($movies);
+      // if($movies) {
+      //   $querystr = "
+      //     SELECT wp_postmeta.movie_time, wp_postmeta.movie_title, wp_postmeta.movie_date
+      //     FROM wp_posts, wp_postmeta 
+      //     WHERE wp_posts.ID = wp_postmeta.post_id 
+      //     AND wp_postmeta.meta_key = 'movie_date'
+      //     AND wp_posts.post_status = 'publish'
+      //     AND wp_posts.post_type = 'post'
+      //     AND year(str_to_date(wp_postmeta.meta_value, '%d/%m/%Y')) = year(curdate())
+      //     AND week(str_to_date(wp_postmeta.meta_value, '%d/%m/%Y')) = 0
+      //     ORDER BY str_to_date(wp_postmeta.meta_value, '%d/%m/%Y') ASC
+      // ";
+      // }
+
+      $args = array(
+        'post_type'   => 'post',
+        'category_name' => 'movies',
+        'post_status' => 'publish',
+        'posts_per_page'  => -1,
+        'meta_key'    => 'movie_time',
+        'orderby'   => 'meta_value_num',
+        'order'     => 'ASC',
+        'meta_query' => array(
+          array(
+            'key' => 'movie_date',
+            'value' => '02/01/2015'
+          )
+        )
+      );
+      
+
+// query
+$wp_query = new WP_Query( $args );
+
+      // print_r($wp_query);
+
+      // loop
+while( $wp_query->have_posts() )
+{
+  $wp_query->the_post();
+
+  the_field('movie_time');
+}
+
       ?>
 
 
@@ -128,7 +165,5 @@
     
   </div>
 </div>
-
-<?php include (TEMPLATEPATH . '/navbar.php'); ?>  
 
 <?php get_footer();?> 
