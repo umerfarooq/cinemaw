@@ -35,15 +35,11 @@ body {
 	background-color: black;
 	height: 100%;
 	font-family: 'PT-Sans-Regular','PT-Sans-Bold' !important;
-	/*font-family: "PT Sans Narrow" !important;*/
 }
 
 footer {
-	position: absolute;
-	bottom: 0;
-	background-color: rgba(7,4,4,0.75);;
-	border-top: 1px solid #333333;
-	width: 100%;
+	background-color: rgba(7,4,4,0.90);
+	margin-top: 1% !important;
 }
 
 .container {
@@ -55,6 +51,21 @@ footer {
 	position: relative;
 	min-height: 100%;
 }
+
+.row {
+	margin: 0;
+}
+
+.content {
+	min-height: 300px;
+}
+
+.logo {
+	margin: 4%;
+}
+
+/*...........................*/
+/* Navigations */
 
 .navbar {
 	margin-bottom: 0 !important;
@@ -80,23 +91,22 @@ footer {
 footer nav ul li a:hover {
 	background:transparent !important;
 }
+
+.social-icons nav ul li a:hover {
+	background-color: #eee !important;
+	text-decoration: none;
+}
+
 .footer-nav .nav > li > a:hover {
 	color: #ffbf00 !important;
 }
+
 ul#footer_nav2 li a {
 	color: #888;
 }
+
 ul#footer_nav2 li a:not(.copy-right):hover {
 	color: #ffffff !important;
-}
-
-
-/*end footer*/
-nav.main-nav {
-	position: absolute;
-	background: transparent;
-	left: 2%;
-	top: 17%;
 }
 
 nav.main-nav ul li {
@@ -114,69 +124,17 @@ nav.main-nav ul li a:hover {
 
 @import url('bootstrap/css/media-sensitive.css'); 
 
-/*logo*/
-div#logo {
-	position: absolute;
-	top: 3%;
-	left: 5%;
-	z-index: 1000;
-}
-
 /*...........................*/
 /* Landing Page */
 
-/* Slider Customisation */
-
-#slider {
-	position: absolute !important;
-	bottom: 0;
+#thumbnails .item{
+	margin: 3px;
 }
 
-.msg.error {
-	display: none !important;
-}
-
-.op {
-	display: none !important;
-}
-
-.thumbnails_wrapper {
-	background: rgba(7,7,4,0.5) !important;
-	position: absolute !important;
-	bottom: 14%;
-	width: 100% !important;
-	padding: 0.3% 7%;
-}
-
-.thumbnails_wrapper .custom-caption {
-	display: none !important;
-}
-
-.tiksluscarousel .nav_right {
-	background-image: url("bootstrap/img/right-arrow.png");
-  top: 75% !important;
-  height: 70px !important;
-  width: 40px !important;
-  opacity: 1 !important;
-  background-color: transparent !important; 
-  background-repeat: no-repeat !important; 
-  right: 3% !important;
-  z-index: 95400 !important;
-}
-
-.tiksluscarousel .nav_left {
-	background-image: url("bootstrap/img/left-arrow.png");
-	top: 75% !important;
-	height: 70px !important;
-  width: 40px !important;
-  opacity: 1 !important;
-  background-color: transparent !important; 
-  background-repeat: no-repeat !important; 
-  left: 3% !important;
-}
-
-.progress {
-	display: none !important;
+#thumbnails .item img{
+	display: block;
+	width: 100%;
+	height: auto;
 }
 
 .custom-caption {
@@ -223,14 +181,6 @@ div#logo {
 	font-weight: normal;
 	margin-left: 5px;
 	cursor: pointer;
-}
-
-.carousel > li {
-	transform: scale(1) !important;
-}
-
-.tiksluscarousel > ul > li > img {
-	opacity: 0.6;
 }
 
 /*Style custom popup*/
@@ -314,6 +264,14 @@ div#scheduler {
 }
 
 /*seach form style*/
+
+.result-item .thumbnail {
+	min-height: 160px;
+}
+
+.result-item .thumbnail > a {
+	text-decoration: none;
+}
 
 .search-box input {
 	color: #fff;
