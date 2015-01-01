@@ -41,12 +41,12 @@ jQuery(document).ready(function($){
      $.post(link.attr("href"), {
           date: link.attr('data-date')
         }, function(data) {
-          alert('Yayy');
-          sb=$(this).parent().siblings('.selected');
+          // alert('Yayy');
+          sb = $(link).parent().siblings('.selected');
           sb.removeClass('selected');
-          $(this).parent().addClass('selected');
+          $(link).parent().addClass('selected');
 
-          $('schedule_timetable').html($(data));
+          $(".schedule_timetable").html($(data));
         }
       ); 
     } else {
@@ -60,21 +60,15 @@ jQuery(document).ready(function($){
     );};
     return false;
   });
+  
+  $('.btn_week').click(function(){
 
-  $('.load-schedule').click(function(){
-    // sb=$(this).parent().siblings('.selected');
-    // sb.removeClass('selected');
-    // $(this).parent().addClass('selected');
-    var link = $(this);
-
-    $.post('', {
-      post_expander: 1
-    }, function(data) {
-          // link.parents(".entry").html($(data));
-          
-        }
-      ); 
-    
+    // alert($(this).find('div').attr('class'));
+    $(this).siblings('.selected').removeClass('selected');
+    $(this).addClass('selected');
+    sb = $(this).siblings('.btn_week').find('div').not('.hide');
+    sb.addClass('hide');
+    $(this).find('div.schedule_left').removeClass('hide');
   });
 
   $("#thumbnails").owlCarousel();
