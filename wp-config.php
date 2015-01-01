@@ -22,13 +22,13 @@ if (file_exists(dirname(__FILE__) . '/local-config.php')) {
     include( dirname(dirname(dirname(__FILE__))) . '/shared/db-config.php' );
 } else {
     /** The name of the database for WordPress */
-    define('DB_NAME', 'cinemaworld');
+    define('DB_NAME', 'umerf_cinemaworld');
 
     /** MySQL database username */
-    define('DB_USER', 'root');
+    define('DB_USER', 'umerf_cw');
 
     /** MySQL database password */
-    define('DB_PASSWORD', '');
+    define('DB_PASSWORD', 'humtum');
 
     /** MySQL hostname */
     define('DB_HOST', 'localhost');

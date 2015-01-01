@@ -30,10 +30,10 @@
       <div class="col-lg-4 col-lg-offset-7">
         <nav class="nav navbar pull-right">  
           <ul id="footer_nav2" class="nav navbar-nav">
-            <li><a class="copy-right">Copyright &copy; 2014 CinemaWorld</a></li>
-            <li><a href="JavaScript:void(0);" class="privacy_policy_open">Privacy Policy</a></li>
-            <li><a href="JavaScript:void(0);" class="terms_of_use_open" >Terms of Use</a></li>
-            <li><a href="JavaScript:void(0);" class="contact_us_open">Contact Us</a></li>
+            <li><a class="copy-right">Copyright &copy; 2015 CinemaWorld</a></li>
+            <li><a href="<?php echo get_permalink( get_page_by_path( 'privacy-policy-page' ) );?>" class="load-post static-page">Privacy Policy</a></li>
+            <li><a href="<?php echo get_permalink( get_page_by_path( 'terms-of-use-page' ) );?>" class="load-post static-page" >Terms of Use</a></li>
+            <li><a href="<?php echo get_permalink( get_page_by_path( 'contact-us-page' ) );?>" class="load-post static-page">Contact Us</a></li>
           </ul>
         </nav>  
       </div>
