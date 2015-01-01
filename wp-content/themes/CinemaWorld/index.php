@@ -9,17 +9,38 @@
 ?>
 <?php get_header(); ?>
 
-<div id='slider' class='row-fluid'>
-    <ul>
+<div class='row-fluid'>
+    <div id="thumbnails" class="owl-carousel">
         <?php
-        // The Query
-        query_posts( array ( 'category_name' => 'movies', 'posts_per_page' => -1 ) );
+            $args = array(
+                'category_name' => 'movies',
+                'posts_per_page' => -1,
+                'meta_query' => array(
+                    array(
+                        'key' => 'movie_image',
+                        'value' => '',
+                        'compare' => '!='
+                    )
+                )
+            );
+            // The Query
+            $query = new WP_Query( $args );
+            // Array of Background Images
+            $images = array();
 
-        // The Loop
-        while ( have_posts() ) : the_post(); ?>
-            <li>
-                <img src="<?php the_field('movie_image'); ?>" class="img-responsive" > 
-                <div class='custom-caption'>
+            
+
+            if ( $query->have_posts() ) {
+            // The Loop
+            while ( $query->have_posts() ) { 
+                $query->the_post();
+                ?>
+                
+                <?php $images[] = "'".get_field('movie_image')."'"; ?>
+                
+                <div><img src="<?php the_field('movie_image'); ?>" /></div>
+
+                <!-- <div class='custom-caption'>
                     
                     <div class='row'>
                         <div class='col-lg-12'>
@@ -55,24 +76,32 @@
                         </div>
                     </div>
 
-                    <script type="text/javascript">
-                    jQuery(document).ready(function($){
-                        $("#movie_<?php echo get_the_ID(); ?>").popup();
-                    });                    
-                    </script>
+                </div>  
+ -->
 
-                </div>                   
-            </li>
-
-            
-        <?php 
-        endwhile;
-
-        // Reset Query
-        wp_reset_query();
+            <?php 
+                }
+            }
+            // Reset Query
+            wp_reset_postdata();
+            $images = implode(", ", $images);
         ?>
-    </ul>
-</div>
+        </div>
+        
+        <script type="text/javascript">
+            jQuery(document).ready(function($){
+                $.backstretch([<?php echo $images; ?>], {duration: 40000000});
+
+                $(window).on("backstretch.after", function (e, instance, index) {
+                    // $.post(link.attr("href"), {post_expander: 1}, function(data) {
+                    //     // link.parents(".entry").html($(data));
+                    //     $(".detail").html($(data));
+                    //     $("#movie_detail").popup('show');
+                    // }
+                });
+            });
+        </script>    
+    </div>
 <?php include (TEMPLATEPATH . '/navbar.php'); ?>  
 
 <?php get_footer(); ?>

@@ -17,7 +17,40 @@
 </script>
 <div class="container-fluid schedule-page">
   <div class="schedule_container" style="float:none">
-    
+      
+    <?php 
+      // Build a custom query to get posts from future dates.
+      $querystr = "
+          SELECT wp_posts.ID, week(str_to_date(wp_postmeta.meta_value, '%d/%m/%Y')) AS week
+          FROM wp_posts, wp_postmeta 
+          WHERE wp_posts.ID = wp_postmeta.post_id 
+          AND wp_postmeta.meta_key = 'movie_date'
+          AND wp_posts.post_status = 'publish'
+          AND wp_posts.post_type = 'post'
+          AND year(str_to_date(wp_postmeta.meta_value, '%d/%m/%Y')) = year(curdate())
+          AND week(str_to_date(wp_postmeta.meta_value, '%d/%m/%Y')) = 0
+          ORDER BY str_to_date(wp_postmeta.meta_value, '%d/%m/%Y') ASC
+      ";
+
+      $movies = $wpdb->get_results($querystr, OBJECT);
+
+      if($movies) {
+        $querystr = "
+          SELECT wp_postmeta.movie_time, wp_postmeta.movie_title, wp_postmeta.movie_date
+          FROM wp_posts, wp_postmeta 
+          WHERE wp_posts.ID = wp_postmeta.post_id 
+          AND wp_postmeta.meta_key = 'movie_date'
+          AND wp_posts.post_status = 'publish'
+          AND wp_posts.post_type = 'post'
+          AND year(str_to_date(wp_postmeta.meta_value, '%d/%m/%Y')) = year(curdate())
+          AND week(str_to_date(wp_postmeta.meta_value, '%d/%m/%Y')) = 0
+          ORDER BY str_to_date(wp_postmeta.meta_value, '%d/%m/%Y') ASC
+      ";
+      }
+      print_r($movies);
+      ?>
+
+
   	<div class="schedule_week">
       <a href="#" class="btn_week selected"><span>This Week</span>
         <div class="schedule_left">
