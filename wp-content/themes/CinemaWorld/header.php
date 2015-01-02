@@ -14,9 +14,8 @@
  
     <?php wp_head(); ?>
     <link href="<?php bloginfo('template_url'); ?>/bootstrap/css/owl.carousel.css" rel="stylesheet">
-    <!-- <link href="<?php bloginfo('template_url'); ?>/bootstrap/css/tiksluscarousel.css" rel="stylesheet"> -->
+    <link href="<?php bloginfo('template_url'); ?>/bootstrap/css/owl.theme.css" rel="stylesheet">
     <script src="<?php bloginfo('template_url'); ?>/bootstrap/js/jquery.popupoverlay.js"></script>
-    <!--<script src="<?php bloginfo('template_url'); ?>/bootstrap/js/tiksluscarousel.js"></script>-->
     <script src="<?php bloginfo('template_url'); ?>/bootstrap/js/jquery.backstretch.min.js"></script>
     <script src="<?php bloginfo('template_url'); ?>/bootstrap/js/owl.carousel.min.js"></script>
     <script src="<?php bloginfo('template_url'); ?>/bootstrap/js/functions.js"></script>    
@@ -24,8 +23,8 @@
 
   <body>    
     <div class="container-fluid">
-      <div id="logo" class="row">
-        <div class="span3">
+      <div class="row">
+        <div class="col-lg-3 col-lg-offset-1 logo">
           <a href="/"><img src="<?php bloginfo('template_directory'); ?>/bootstrap/img/logo.png" class="img-responsive logo-image"></a>
         </div>
       </div>

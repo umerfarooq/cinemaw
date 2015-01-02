@@ -71,6 +71,28 @@ jQuery(document).ready(function($){
     $(this).find('div.schedule_left').removeClass('hide');
   });
 
-  $("#thumbnails").owlCarousel();
+  $("#thumbnails").owlCarousel({
+    items: 6,
+    itemsCustom : false,
+    itemsDesktop : [1199,4],
+    itemsDesktopSmall : [980,3],
+    itemsTablet: [768,2],
+    itemsTabletSmall: false,
+    itemsMobile : [479,1],
+    singleItem : false,
+    navigation: true,
+    navigationText: false,
+    scrollPerPage: true,
+    rewindNav : true,
+    pagination: false,
+    slideSpeed: 800,
+    responsive: true,
+    lazyLoad: true 
+  });
+
+  $(".thumb").on('click', function(e){
+    e.preventDefault();
+    $.backstretch('show',$(this).data("id"));
+  }); 
 
 });
