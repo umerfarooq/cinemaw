@@ -14,44 +14,9 @@
         <?php include (TEMPLATEPATH . '/navbar.php'); ?>  
     </div>
 
-    <!-- <div class='custom-caption'>
-                        
-        <div class='row'>
-            <div class='col-lg-12'>
-                <h1><?php the_title();?></h1>
-            </div>
-        </div>
+    <div class='col-lg-5 col-lg-offset-2' id='custom-caption'>
 
-        <div class='row'>
-            <div class='col-lg-12'>
-                <?php the_field('movie_genre');?></p>
-            </div>
-        </div>
-
-        <div class='row' style='height: 50%;'>
-            <div class='col-lg-12'>
-                <?php echo mb_strimwidth(get_field('movie_synopsis'), 0, 250, "");?>
-            </div>
-        </div>
-
-        <div class='row'>
-            <div class='col-lg-6'>
-                <a href='<?php the_permalink(); ?>' class="load_post">
-                    <span class='caption-action read' ></span>
-                    <label>Read more</label>
-                </a>
-            </div>
-
-            <div class='col-lg-5 col-lg-offset-1'>
-                <a href='<?php echo the_field("video_url")?>' class="wplightbox" data-width="640" data-height="360" >
-                    <span class='caption-action trailer'  ></span>
-                    <label>Watch trailer</label>
-                </a>
-            </div>
-        </div>
-
-    </div>  
-     -->
+    </div>
 </div>
 
 <div class='row'>
@@ -83,7 +48,7 @@
                     
                     <?php $images[] = "'".get_field('movie_image')."'"; ?>
                     
-                    <div class='item'><a class="thumb" data-id="<?php echo $imageIndex; ?>" href="#"><img src="<?php the_field('movie_image'); ?>" /></a></div>
+                    <div class='item'><a class="thumb" data-id="<?php echo $imageIndex; ?>" data-post-url="<?php the_permalink(); ?>" href="JavaScript:void(0);"><img src="<?php the_field('movie_image'); ?>" /></a></div>
                 <?php 
                     $imageIndex++;
                     }
@@ -99,11 +64,11 @@
                 $.backstretch([<?php echo $images; ?>], {duration: 40000000});
 
                 $(window).on("backstretch.after", function (e, instance, index) {
-                    // $.post(link.attr("href"), {post_expander: 1}, function(data) {
-                    //     // link.parents(".entry").html($(data));
-                    //     $(".detail").html($(data));
-                    //     $("#movie_detail").popup('show');
-                    // }
+                    var post_url = $('.item').find('[data-id="'+index+'"]').attr('data-post-url');
+
+                    $.post(post_url, {post_caption: 1}, function(data) {
+                        $('#custom-caption').html(data);
+                    });
                 });
             });
         </script>  

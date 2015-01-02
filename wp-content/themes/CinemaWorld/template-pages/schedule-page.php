@@ -8,58 +8,16 @@
  */
  get_header(); ?>
 
- <div class='row'>
-    <div class='col-lg-11 col-lg-offset-1 content'>
+ <div class='row content'>
+    <div class='col-lg-3 col-lg-offset-1'>
         <?php include (TEMPLATEPATH . '/navbar.php'); ?>  
     </div>
-</div>
 
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('#week_day').click(function(){
-      // alert('hi');
-      $('#shedule_right').show();      
-    });
-  });
-</script>
-
-<div class="container-fluid schedule-page">
+    <div class='col-lg-8'>
+      <div class="container-fluid schedule-page">
   <div class="schedule_container" style="float:none">
-      
-    <?php 
 
-      $args = array(
-        'post_type'   => 'post',
-        'category_name' => 'movies',
-        'post_status' => 'publish',
-        'posts_per_page'  => -1,
-        'meta_key'    => 'movie_time',
-        'orderby'   => 'meta_value_num',
-        'order'     => 'ASC',
-        'meta_query' => array(
-          array(
-            'key' => 'movie_date',
-            'value' => '02/01/2015'
-          )
-        )
-      );
-      
-
-// query
-$wp_query = new WP_Query( $args );
-
-      // print_r($wp_query);
-
-      // loop
-while( $wp_query->have_posts() )
-{
-  $wp_query->the_post();
-
-  the_field('movie_time');
-}
-
-
-  	<div class="schedule_week">
+    <div class="schedule_week">
       <div class="btn_week selected"><span>This Week</span>
         <div class="schedule_left">
           <ul class="schedule_date">
@@ -196,6 +154,6 @@ while( $wp_query->have_posts() )
     </div>  
   </div>
 </div>
-
-
+    </div>
+</div>
 <?php get_footer();?> 

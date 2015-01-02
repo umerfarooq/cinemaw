@@ -142,45 +142,39 @@ nav.main-nav ul li a:hover , nav.main-nav ul li a:focus {
 	height: auto;
 }
 
-.custom-caption {
+#custom-caption {
 	background-color: rgba(7, 7, 4, 0.75) !important;
-  bottom: 24%;
   color: #fff;
   font-size: 14px;
-  height: 22%;
-  left: 68%;
-  margin: auto;
   padding: 1.2em;
-  position: absolute;
-  width: 28%;
 }
 
-.custom-caption h1 {
+#custom-caption h1 {
 	margin: 0 !important;
 	font-size: 30px !important;
 }
 
-.custom-caption a img {
+#custom-caption a img {
 	width: 23px !important;
 	height: 23px !important; 	
 }
 
-.custom-caption .caption-action {
+#custom-caption .caption-action {
 	display: block; 
 	width: 23px; 
 	height: 23px;
 	float: left;
 }
 
-.custom-caption .caption-action.read {
+#custom-caption .caption-action.read {
 	background-image: url('bootstrap/img/read-more-icon.png'); 	
 }
 
-.custom-caption .caption-action.trailer {
+#custom-caption .caption-action.trailer {
 	background-image: url('bootstrap/img/watch-trailer-icon.png'); 	
 }
 
-.custom-caption label {
+#custom-caption label {
 	float: left;
 	color: #ffbf00;
 	font-weight: normal;

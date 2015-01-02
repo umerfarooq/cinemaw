@@ -128,6 +128,57 @@ function movie_schedule_entries ( ) { ?>
     </table>
    <?php die();
 }
+
+function post_caption( ) { 
+  if ( have_posts() ) {
+    
+    while ( have_posts() ) {
+      the_post(); 
+
+      ?>
+
+                        
+        <div class='row'>
+            <div class='col-lg-12'>
+                <h1><?php the_title();?></h1>
+            </div>
+        </div>
+
+        <div class='row'>
+            <div class='col-lg-12'>
+                <?php the_field('movie_genre');?></p>
+            </div>
+        </div>
+
+        <div class='row' style='height: 50%;'>
+            <div class='col-lg-12'>
+                <?php echo mb_strimwidth(get_field('movie_synopsis'), 0, 250, "");?>
+            </div>
+        </div>
+
+        <div class='row'>
+            <div class='col-lg-6'>
+                <a href='<?php the_permalink(); ?>' class="load_post">
+                    <span class='caption-action read' ></span>
+                    <label>Read more</label>
+                </a>
+            </div>
+
+            <div class='col-lg-5 col-lg-offset-1'>
+                <a href='<?php echo the_field("video_url")?>' class="wplightbox" data-width="640" data-height="360" >
+                    <span class='caption-action trailer'  ></span>
+                    <label>Watch trailer</label>
+                </a>
+            </div>
+        </div>
+
+
+    <?php 
+    }
+  }
+  die();
+}
+
 function post_expander_activate ( ) {
   if ( isset( $_POST["post_expander"] ) ) {
     add_action( 'wp', 'post_expander_show_post' );
@@ -140,6 +191,8 @@ function post_expander_activate ( ) {
    }
    elseif ( isset( $_POST["date"] ) ) {
     add_action( 'wp', 'movie_schedule_entries' );
+  }elseif ( isset( $_POST["post_caption"] ) ) {
+    add_action( 'wp', 'post_caption' );
   }
 }
 
