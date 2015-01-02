@@ -180,14 +180,23 @@ function post_caption( ) {
             });
             return false;
           });
+          
+          jQuery.cachedScript = function( url, options ) {
+          // Allow user to set any option except for dataType, cache, and url
+          options = $.extend( options || {}, {
+          dataType: "script",
+          cache: true,
+          url: url
           });
-  
-          $.getScript( "<?php path_join(WP_PLUGIN_URL . '/wonderplugin-lightbox/engine/wonderpluginlightbox.js?ver=1.7'); ?>", function( data, textStatus, jqxhr ) {
-            console.log( data ); // Data returned
-            console.log( textStatus ); // Success
-            console.log( jqxhr.status ); // 200
-            console.log( "Load was performed." );
-            });
+          // Use $.ajax() since it is more flexible than $.getScript
+          // Return the jqXHR object so we can chain callbacks
+          return jQuery.ajax( options );
+          };
+          // Usage
+          $.cachedScript( "<?php echo plugins_url(),'/wonderplugin-lightbox/engine/wonderpluginlightbox.js';?>" ).done(function( script, textStatus ) {
+          console.log( textStatus );
+          });
+          });
         </script>
 
 
