@@ -64,7 +64,7 @@ footer {
 }
 
 .logo {
-	margin-top: 4%;
+	margin-top: 2%;
 	margin-bottom: 4%;
 }
 
@@ -79,6 +79,10 @@ footer {
 .navbar-nav > li > a {
 	color: #fff;
 	padding: 5px !important;
+}
+
+.nav > ul {
+	padding: 0;
 }
 
 .nav > li > a:hover, .nav > li > a:focus {
@@ -147,6 +151,7 @@ nav.main-nav ul li a:hover , nav.main-nav ul li a:focus {
   color: #fff;
   font-size: 14px;
   padding: 1.2em;
+  margin-bottom: 2%;
 }
 
 #custom-caption h1 {
@@ -182,7 +187,19 @@ nav.main-nav ul li a:hover , nav.main-nav ul li a:focus {
 	cursor: pointer;
 }
 
+#custom-caption .caption-desc {
+	margin-bottom: 5%;
+}
+
 /*Style custom popup*/
+#movie_detail {
+	transform: scale(0.8);
+}
+
+.popup_visible #movie_detail {
+  transform: scale(1);
+}
+
 #popout_cross{
 	background: url(bootstrap/img/popout-cross-icon.png) no-repeat;
 	width: 18px;

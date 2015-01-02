@@ -2,7 +2,9 @@ jQuery(document).ready(function($){
   //
   // Initialize Popup on template container to load dynamic content in Light Box
   //
-  $("#movie_detail").popup();
+  $("#movie_detail").popup({
+    transition: 'all 0.3s'
+  });
 
   //
   // Load dynamic posts, pages and content through AJAX calls in a LightBox

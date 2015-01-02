@@ -32,12 +32,18 @@ get_header(); ?>
 
         <div class="col-lg-11 col-lg-offset-1 ">
             <div class='row'>
-                <?php while ($allsearch->have_posts()) : $allsearch->the_post(); ?>
+                <?php while ($allsearch->have_posts()) : $allsearch->the_post(); 
+                    if(the_field('movie_image_source') == 'file') {
+                        $image = get_field('movie_image_file');                            
+                    } else {
+                        $image = get_field('movie_image_url');
+                    }   
+                ?>
               
                     <div class="col-sm-6 col-md-3 col-lg-2 result-item">
                         <div class="thumbnail">                    
                             <a href="<?php the_permalink(); ?>" title="<?php the_title();?>" class="load_post">
-                                <img src="<?php the_field('movie_image');?>" class='img-responsive responsive_img' >
+                                <img src="<?php echo $image; ?>" class='img-responsive responsive_img' >
                                 <div class="caption">
                                     <?php the_title();?>
                                     <?php if(get_field('movie_original_title')){?>

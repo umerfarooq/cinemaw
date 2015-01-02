@@ -9,14 +9,14 @@
 ?>
 <?php get_header(); ?>
 
-<div class='row content'>
+<div class='row'>
     <div class='col-lg-3 col-lg-offset-1 '>
         <?php include (TEMPLATEPATH . '/navbar.php'); ?>  
     </div>
+</div>
 
-    <div class='col-lg-5 col-lg-offset-2' id='custom-caption'>
-
-    </div>
+<div class='row'>
+    <div class='col-lg-4 col-lg-offset-7' id='custom-caption'></div>
 </div>
 
 <div class='row'>
@@ -26,9 +26,17 @@
                 $args = array(
                     'category_name' => 'movies',
                     'posts_per_page' => -1,
+                    'post_status' => 'publish',
+                    'post_type' => 'post',
                     'meta_query' => array(
+                        'relation' => 'OR', // Optional, defaults to "AND"
                         array(
-                            'key' => 'movie_image',
+                            'key' => 'movie_image_file',
+                            'value' => '',
+                            'compare' => '!='
+                        ),
+                        array(
+                            'key' => 'movie_image_url',
                             'value' => '',
                             'compare' => '!='
                         )
@@ -46,9 +54,18 @@
                     $query->the_post();
                     ?>
                     
-                    <?php $images[] = "'".get_field('movie_image')."'"; ?>
+                    <?php 
+                        if(the_field('movie_image_source') == 'file') {
+                            $quoted_image = "'".get_field('movie_image_file')."'";
+                            $image = get_field('movie_image_file');                            
+                        } else {
+                            $quoted_image = "'".get_field('movie_image_url')."'"; 
+                            $image = get_field('movie_image_url');
+                        }   
+                        $images[] = $quoted_image;                     
+                    ?>
                     
-                    <div class='item'><a class="thumb" data-id="<?php echo $imageIndex; ?>" data-post-url="<?php the_permalink(); ?>" href="JavaScript:void(0);"><img src="<?php the_field('movie_image'); ?>" /></a></div>
+                    <div class='item'><a class="thumb" data-id="<?php echo $imageIndex; ?>" data-post-url="<?php the_permalink(); ?>" href="JavaScript:void(0);"><img src="<?php echo $image; ?>" /></a></div>
                 <?php 
                     $imageIndex++;
                     }
