@@ -46,7 +46,14 @@ Author URI: http://xplus3.net/
     
           while ( have_posts() ) {
             the_post();
-            $id=(string)get_the_ID(); ?>
+            $id=(string)get_the_ID(); 
+
+            if(the_field('movie_image_source') == 'file') {
+                $image = get_field('movie_image_file');                            
+            } else {
+                $image = get_field('movie_image_url');
+            }  
+            ?>
             <div>
                 <div class='row'>
                     <div class='col-lg-12'>
@@ -56,7 +63,7 @@ Author URI: http://xplus3.net/
 
                 <div class='row'>
                     <div class='col-lg-12'>
-                        <img src="<?php the_field('movie_image');?>" class="movie-image img-responsive" /></img>
+                        <img src="<?php echo $image; ?>" class="movie-image img-responsive" /></img>
                     </div>
                 </div>
 
@@ -148,7 +155,7 @@ function post_caption( ) {
             </div>
         </div>
 
-        <div class='row' style='height: 50%;'>
+        <div class='row caption-desc'>
             <div class='col-lg-12'>
                 <?php echo mb_strimwidth(get_field('movie_synopsis'), 0, 250, "");?>
             </div>
