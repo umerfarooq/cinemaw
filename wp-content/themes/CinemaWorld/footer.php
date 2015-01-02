@@ -44,7 +44,10 @@
 <?php wp_footer(); ?>
 </div> <!-- /container -->
 <div class="popup light" id="movie_detail">
-  <div class="detail"></div>  
+  <div class="detail"></div> 
 </div>
+<script type="text/javascript">
+  $.backstretch("<?php the_field('image_url', get_page_by_path('home')->ID);?>"); 
+</script>
 </body>
 </html>

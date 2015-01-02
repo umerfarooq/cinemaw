@@ -181,6 +181,13 @@ function post_caption( ) {
             return false;
           });
           });
+  
+          $.getScript( "<?php path_join(WP_PLUGIN_URL . '/wonderplugin-lightbox/engine/wonderpluginlightbox.js?ver=1.7'); ?>", function( data, textStatus, jqxhr ) {
+            console.log( data ); // Data returned
+            console.log( textStatus ); // Success
+            console.log( jqxhr.status ); // 200
+            console.log( "Load was performed." );
+            });
         </script>
 
 
@@ -210,9 +217,10 @@ function post_expander_activate ( ) {
 function post_expander_list_scripts ( ) {
   wp_enqueue_script( "post-expander", path_join(WP_PLUGIN_URL, basename( dirname( __FILE__ ) )."/post-expander.js"), array( 'jquery' ) );
 }
-
+// function post_caption_list_scripts ( ) {
+//   wp_enqueue_script( "post-expander", (TEMPLATEPATH . "/post-expander/post-expander.js?ver=4.1"), array( 'jquery' ) );
+// }
 add_action('init', 'post_expander_activate');
 add_action('wp_print_scripts', 'post_expander_list_scripts');
-
-
+// add_action('wp_print_scripts', 'post_caption_list_scripts');
 ?>
