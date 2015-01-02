@@ -135,9 +135,7 @@ function post_caption( ) {
     while ( have_posts() ) {
       the_post(); 
 
-      ?>
-
-                        
+      ?>             
         <div class='row'>
             <div class='col-lg-12'>
                 <h1><?php the_title();?></h1>
@@ -171,6 +169,19 @@ function post_caption( ) {
                 </a>
             </div>
         </div>
+
+        <script type="text/javascript">
+          jQuery(document).ready(function($){
+          $(".load_post").click( function() {
+            var link = $(this);
+            $.post(link.attr("href"), {post_expander: 1}, function(data) {
+              $(".detail").html($(data));
+              $("#movie_detail").popup('show');
+            });
+            return false;
+          });
+          });
+        </script>
 
 
     <?php 
