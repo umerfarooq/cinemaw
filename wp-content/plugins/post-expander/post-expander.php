@@ -5,6 +5,7 @@ Description: Expands a post to show the full contents when the reader clicks the
 Author: Jonathan Brinley
 Author URI: http://xplus3.net/
 */
+ob_start();
 ?>
 <?php function static_page_popup () {
     if (have_posts()) {
@@ -20,6 +21,7 @@ Author URI: http://xplus3.net/
 
     die();
 }?>
+
 <?php function navigation_popup () {
     if (have_posts()) {
         
@@ -62,64 +64,66 @@ Author URI: http://xplus3.net/
     die();
 }?>
 
-<?php function post_expander_show_post (  ) {
+<?php function post_expander_show_post () {
   if ( have_posts() ) {
     
-          while ( have_posts() ) {
-            the_post();
-            $id=(string)get_the_ID(); 
+    while ( have_posts() ) {
+      the_post();
+      $id=(string)get_the_ID(); 
 
-            $source = get_field('movie_image_source');
-            if( $source == 'file') {
-                $image = get_field('movie_image_file');                            
-            } else {
-                $image = get_field('movie_image_url');
-            }  
-            ?>
-            <div>
-                <div class='row'>
-                    <div class='col-lg-12'>
-                        <h1><?php the_title();?></h1>
-                    </div>
-                </div>
+      $source = get_field('movie_image_source');
+      if( $source == 'file') {
+          $image = get_field('movie_image_file');                            
+      } else {
+          $image = get_field('movie_image_url');
+      }  
+      ?>
+      <div>
+          <div class='row'>
+              <div class='col-lg-12'>
+                  <h1><?php the_title();?></h1>
+              </div>
+          </div>
 
-                <div class='row'>
-                    <div class='col-lg-12'>
-                        <img src="<?php echo $image; ?>" class="movie-image img-responsive" /></img>
-                    </div>
-                </div>
+          <div class='row'>
+              <div class='col-lg-12'>
+                  <img src="<?php echo $image; ?>" class="movie-image img-responsive" /></img>
+              </div>
+          </div>
 
-                <div class="row">
-                    <div class='col-lg-2'>Country : </div>
-                    <div class='col-lg-10'><?php the_field('movie_country');?></div>
-                </div>
+          <div class="row">
+              <div class='col-lg-2'>Country : </div>
+              <div class='col-lg-10'><?php the_field('movie_country');?></div>
+          </div>
 
-                <div class="row">
-                    <div class='col-lg-2'>Genre : </div>
-                    <div class='col-lg-10'><?php the_field('movie_genre');?></div>
-                </div>
+          <div class="row">
+              <div class='col-lg-2'>Genre : </div>
+              <div class='col-lg-10'><?php the_field('movie_genre');?></div>
+          </div>
 
-                <div class="row">
-                    <div class='col-lg-2'>Cast / Director : </div>
-                    <div class='col-lg-10'><?php the_field('movie_casts');?></div>
-                </div>
+          <div class="row">
+              <div class='col-lg-2'>Cast / Director : </div>
+              <div class='col-lg-10'><?php the_field('movie_casts');?></div>
+          </div>
 
-                <div class="row">
-                    <div class='col-lg-2'>Duration : </div>
-                    <div class='col-lg-10'><?php the_field('movie_duration');?></div>
-                </div>
+          <div class="row">
+              <div class='col-lg-2'>Duration : </div>
+              <div class='col-lg-10'><?php the_field('movie_duration');?></div>
+          </div>
 
-                <div class="row" style='margin-bottom: 3%'>
-                    <div class='col-lg-2'>Synopsis : </div>
-                    <div class='col-lg-10'><?php the_field('movie_synopsis');?></div>
-                </div>
-                <a href="JavaScript:void(0);" id="popout_cross" class="movie_detail_close"></a>
-            </div>
-  <?php }}
+          <div class="row" style='margin-bottom: 3%'>
+              <div class='col-lg-2'>Synopsis : </div>
+              <div class='col-lg-10'><?php the_field('movie_synopsis');?></div>
+          </div>
+          <a href="JavaScript:void(0);" id="popout_cross" class="movie_detail_close"></a>
+      </div>
+  <?php 
+      }
+    }
   die();
-}
+} ?>
 
-function movie_schedule_entries ( ) { ?>
+<?php function movie_schedule_entries ( ) { ?>
     <table class="table-striped" width="100%" cellpadding="0" border="0">
         <?php
 
@@ -174,10 +178,12 @@ function movie_schedule_entries ( ) { ?>
         });
       });
     </script>
-   <?php die();
-}
+   <?php 
+    die();
+  }
+?>
 
-function post_caption( ) { 
+<?php function post_caption( ) { 
   if ( have_posts() ) {
     
     while ( have_posts() ) {
