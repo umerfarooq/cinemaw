@@ -11,7 +11,7 @@ Author URI: http://xplus3.net/
         
         while (have_posts()) { 
             the_post(); ?>
-            <h3 class="privacy-policy-title"><?php the_title(); ?></h3>
+            <h3 class="privacy-policy-title"><?php the_field('title'); ?></h3>
             <p class="privacy-policy-description"><?php the_content(); ?></p>
             <a href="JavaScript:void(0);" id="popout_cross" class="movie_detail_close"></a>
 

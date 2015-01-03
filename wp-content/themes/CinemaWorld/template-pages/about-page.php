@@ -15,7 +15,7 @@
     <div class='col-lg-7 popup '>
 				<?php $recent = new WP_Query("pagename=about-page"); while($recent->have_posts()) : $recent->the_post();?>
 				
-		    <h3 class="about-title"><?php the_title(); ?></h3>
+		    <h3 class="about-title"><?php the_field('title'); ?></h3>
 				<span class="about-content"><?php the_content(); ?></span>
 				<?php endwhile;?>
     </div>

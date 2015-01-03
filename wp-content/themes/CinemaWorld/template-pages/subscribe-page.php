@@ -15,7 +15,7 @@
     <div class="col-lg-7 popup">
     	<?php $recent = new WP_Query("pagename=subscribe"); while($recent->have_posts()) : $recent->the_post();?>
     	
-        <h2 class="subscribe-title"><?php the_title(); ?></h2>
+        <h3 class="subscribe-title"><?php the_field('title'); ?></h3>
     	<p>Get CinemaWorld through your local pay TV operator in your countries:</p>
     	<nav class="navbar navbar-vertical subscribe-nav">
             <ul class="nav navbar"> 
