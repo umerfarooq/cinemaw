@@ -5,8 +5,8 @@
         <nav class="nav navbar footer-nav">
           <ul class="nav navbar-nav">
             <li><a href="/">Home</a></li>
-            <li><a href="<?php echo get_page_link( get_page_by_title('about page')->ID ); ?>" class="" >About</a></li>
-            <li><a href="<?php echo get_page_link( get_page_by_title('subscribe')->ID ); ?>" class="">Subscribe</a></li>
+            <li><a href="<?php echo get_page_link( get_page_by_title('about page')->ID ); ?>" >About</a></li>
+            <li><a href="<?php echo get_page_link( get_page_by_title('subscribe')->ID ); ?>">Subscribe</a></li>
             <li><a href="JavaScript:void(0);">Search</a></li>
             <li id="search_form">
              <?php get_search_form(); ?>
@@ -31,9 +31,9 @@
         <nav class="nav navbar pull-right">  
           <ul id="footer_nav2" class="nav navbar-nav">
             <li><a class="copy-right">Copyright &copy; 2014 CinemaWorld</a></li>
-            <li><a href="<?php echo get_permalink( get_page_by_path( 'privacy-policy-page' ) );?>" class="load-post static-page">Privacy Policy</a></li>
-            <li><a href="<?php echo get_permalink( get_page_by_path( 'terms-of-use-page' ) );?>" class="load-post static-page" >Terms of Use</a></li>
-            <li><a href="<?php echo get_permalink( get_page_by_path( 'contact-us-page' ) );?>" class="load-post static-page">Contact Us</a></li>  
+            <li><a href="<?php echo get_permalink( get_page_by_path( 'privacy-policy-page' ) );?>" class="load_post static-page">Privacy Policy</a></li>
+            <li><a href="<?php echo get_permalink( get_page_by_path( 'terms-of-use-page' ) );?>" class="load_post static-page" >Terms of Use</a></li>
+            <li><a href="<?php echo get_permalink( get_page_by_path( 'contact-us-page' ) );?>" class="load_post static-page">Contact Us</a></li>  
           </ul>
         </nav>  
       </div>

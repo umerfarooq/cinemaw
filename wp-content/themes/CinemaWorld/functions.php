@@ -77,4 +77,8 @@ function asset($dir, $file) {
   echo get_asset($dir, $file);
 }
 
+function week_number( $date = 'today' ) {
+  return ceil( date( 'j', strtotime( $date ) ) / 7 );
+} 
+
 ?>

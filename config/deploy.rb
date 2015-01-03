@@ -40,3 +40,7 @@ task :symlink_shared do
 end
 after :deploy, "symlink_shared"
 after :deploy, 'deploy:cleanup'
+
+after "deploy:finalize_update" do
+  run "chmod -R 755 #{release_path}"
+end

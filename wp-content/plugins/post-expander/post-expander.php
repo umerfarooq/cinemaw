@@ -48,7 +48,8 @@ Author URI: http://xplus3.net/
             the_post();
             $id=(string)get_the_ID(); 
 
-            if(the_field('movie_image_source') == 'file') {
+            $source = get_field('movie_image_source');
+            if( $source == 'file') {
                 $image = get_field('movie_image_file');                            
             } else {
                 $image = get_field('movie_image_url');
@@ -133,6 +134,25 @@ function movie_schedule_entries ( ) { ?>
         <?php }?>
       </tbody>
     </table>
+    <script type="text/javascript">
+      jQuery(document).ready(function($){
+        $(".load_post").click( function() {
+          var link = $(this);
+
+          if(link.hasClass('static-page') || link.hasClass('nav-link') || link.hasClass('date-link')) {
+            return false;
+          } else {
+            $.post(link.attr("href"), {post_expander: 1}, function(data) {
+              $(".detail").html($(data));
+              $('#movie_detail').removeClass('navtype');
+              $('#movie_detail').addClass('light');
+              $("#movie_detail").popup('show');
+            });
+            return false;
+          }
+        });
+      });
+    </script>
    <?php die();
 }
 
@@ -179,34 +199,40 @@ function post_caption( ) {
 
         <script type="text/javascript">
           jQuery(document).ready(function($){
-          $(".load_post").click( function() {
-            var link = $(this);
-            $.post(link.attr("href"), {post_expander: 1}, function(data) {
-              $(".detail").html($(data));
-              $("#movie_detail").popup('show');
+            $(".load_post").click( function() {
+              var link = $(this);
+              
+              if(link.hasClass('static-page') || link.hasClass('nav-link') || link.hasClass('date-link')) {
+                return false;
+              } else {  
+                $.post(link.attr("href"), {post_expander: 1}, function(data) {
+                  $(".detail").html($(data));
+                  $('#movie_detail').removeClass('navtype');
+                  $('#movie_detail').addClass('light');
+                  $("#movie_detail").popup('show');
+                });
+                return false;
+              }
             });
-            return false;
-          });
-          
-          jQuery.cachedScript = function( url, options ) {
-          // Allow user to set any option except for dataType, cache, and url
-          options = $.extend( options || {}, {
-          dataType: "script",
-          cache: true,
-          url: url
-          });
-          // Use $.ajax() since it is more flexible than $.getScript
-          // Return the jqXHR object so we can chain callbacks
-          return jQuery.ajax( options );
-          };
-          // Usage
-          $.cachedScript( "<?php echo plugins_url(),'/wonderplugin-lightbox/engine/wonderpluginlightbox.js';?>" ).done(function( script, textStatus ) {
-          console.log( textStatus );
-          });
+
+            
+            jQuery.cachedScript = function( url, options ) {
+              // Allow user to set any option except for dataType, cache, and url
+              options = $.extend( options || {}, {
+                dataType: "script",
+                cache: true,
+                url: url
+              });
+              // Use $.ajax() since it is more flexible than $.getScript
+              // Return the jqXHR object so we can chain callbacks
+              return jQuery.ajax( options );
+            };
+            // Usage
+            $.cachedScript( "<?php echo plugins_url(),'/wonderplugin-lightbox/engine/wonderpluginlightbox.js';?>" ).done(function( script, textStatus ) {
+              console.log( textStatus );
+            });
           });
         </script>
-
-
     <?php 
     }
   }
@@ -233,10 +259,6 @@ function post_expander_activate ( ) {
 function post_expander_list_scripts ( ) {
   wp_enqueue_script( "post-expander", path_join(WP_PLUGIN_URL, basename( dirname( __FILE__ ) )."/post-expander.js"), array( 'jquery' ) );
 }
-// function post_caption_list_scripts ( ) {
-//   wp_enqueue_script( "post-expander", (TEMPLATEPATH . "/post-expander/post-expander.js?ver=4.1"), array( 'jquery' ) );
-// }
 add_action('init', 'post_expander_activate');
 add_action('wp_print_scripts', 'post_expander_list_scripts');
-// add_action('wp_print_scripts', 'post_caption_list_scripts');
 ?>

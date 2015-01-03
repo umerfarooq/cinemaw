@@ -33,7 +33,8 @@ get_header(); ?>
         <div class="col-lg-11 col-lg-offset-1 ">
             <div class='row'>
                 <?php while ($allsearch->have_posts()) : $allsearch->the_post(); 
-                    if(the_field('movie_image_source') == 'file') {
+                    $source = get_field('movie_image_source');
+                    if( $source == 'file') {
                         $image = get_field('movie_image_file');                            
                     } else {
                         $image = get_field('movie_image_url');

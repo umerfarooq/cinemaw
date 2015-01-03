@@ -13,78 +13,81 @@
         <?php include (TEMPLATEPATH . '/navbar.php'); ?>  
     </div>
 
-    <div class='col-lg-8'>
-      <div class="container-fluid schedule-page">
-  <div class="schedule_container" style="float:none">
-    <div class="row">
-      <div class="schedule_week col-md-12">
-        <div class="btn_week selected"><span>This Week</span></div>
-        <div class="btn_week"><span>+1</span></div>
-        <div class="btn_week"><span>+2</span></div>
-        <div class="btn_week"><span>+3</span></div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="schedule_left col-md-4">
-        <ul class="schedule_date">
-        <?php
-          $aDates = array();
-          $first_date = date('Y-m-01',strtotime('this month'));
-
-          $oStart = new DateTime($first_date);
-          $oEnd = clone $oStart;
-          $oEnd->add(new DateInterval("P1M"));
-
-          while($oStart->getTimestamp() < $oEnd->getTimestamp()) {
-            $aDates[] = $oStart->format('Y-m-d D');
-            $oStart->add(new DateInterval("P1D"));
-          }
-          for ($i=0; $i < date('t'); $i++) { ?>
-           <li class="<?php echo ($aDates[$i] == date('Y-m-d D')) ? 'selected' : '' ?>"><a class="load_post date-link" data-date="<?php echo substr($aDates[$i],0,10); ?>" href="<?php echo get_permalink(get_page_by_title('schedule')); ?>"><?php print $aDates[$i].'<br>';?></a></li>
-          <?php }
-          ?>
-        </ul>
-      </div>
-      <div class="schedule_right col-md-8" >
-        <div class="schedule_timetable">
-          <table class="table-striped" width="100%" cellpadding="0" border="0">
-          <?php
-
-            $args = array(
-            'post_type'   => 'post',
-            'category_name' => 'movies',
-            'post_status' => 'publish',
-            'posts_per_page'  => -1,
-            'meta_key'    => 'movie_time',
-            'orderby'   => 'meta_value_num',
-            'order'     => 'ASC',
-            'meta_query' => array(
-              array(
-                'key' => 'movie_date',
-                'value' => date('d/m/Y')
-              )
-            )
-          );
-
-        // query
-          $wp_query = new WP_Query( $args );?>
-          <tbody>
-            <?php
-            while( $wp_query->have_posts() )
-            {
-              $wp_query->the_post();
-            ?>
-            <tr>
-
-              <td class="columnOdd"> <?php the_field('movie_time'); ?></td>
-              <td class="columnEven"><a class="title ajaxContent cboxElement load_post" href="<?php echo the_permalink();?>"><?php the_title();?></a></td>
-            </tr>
-            <?php }?>
-            </tbody>
-          </table>
+    <div class='col-lg-8 schedule-container'>
+      <div class="row">
+        <div class="schedule_week col-md-8 col-lg-offset-4">
+          <div class="btn_week selected" data-week-number="1"><span>This Week</span></div>
+          <div class="btn_week" data-week-number="2"><span>+1</span></div>
+          <div class="btn_week" data-week-number="3"><span>+2</span></div>
+          <div class="btn_week" data-week-number="4"><span>+3</span></div>
         </div>
       </div>
-    </div>
+
+      <div class="row">
+        <div class="schedule_left col-md-3">
+          <ul class="schedule_date">
+          <?php
+            $aDates = array();
+            $first_date = date('Y-m-01',strtotime('this month'));
+
+            $oStart = new DateTime($first_date);
+            $oEnd = clone $oStart;
+            $oEnd->add(new DateInterval("P1M"));
+
+            while($oStart->getTimestamp() < $oEnd->getTimestamp()) {
+              $aDates[] = $oStart->format('Y-m-d D');
+              $oStart->add(new DateInterval("P1D"));
+            }
+            for ($i=0; $i < date('t'); $i++) { ?>
+             <li class="<?php echo ( (week_number($aDates[$i]) == 1) ? 'show' : 'hide'); ?> <?php echo ($aDates[$i] == date('Y-m-d D')) ? 'selected' : '' ?>" data-week-number="<?php echo week_number($aDates[$i]); ?>">
+              <a class="load_post date-link" data-date="<?php echo date('d/m/Y' ,strtotime(substr($aDates[$i],0,10))); ?>" href="<?php echo get_permalink(get_page_by_title('schedule')); ?>">
+                <?php print $aDates[$i].'<br>';?>
+              </a>
+            </li>
+            <?php }
+            ?>
+          </ul>
+        </div>
+        <div class="schedule_right col-md-9" >
+          <div class="schedule_timetable">
+            <table class="table-striped" width="100%" cellpadding="0" border="0">
+            <?php
+
+              $args = array(
+              'post_type'   => 'post',
+              'category_name' => 'movies',
+              'post_status' => 'publish',
+              'posts_per_page'  => -1,
+              'meta_key'    => 'movie_time',
+              'orderby'   => 'meta_value_num',
+              'order'     => 'ASC',
+              'meta_query' => array(
+                array(
+                  'key' => 'movie_date',
+                  'value' => date('d/m/Y')
+                )
+              )
+            );
+
+          // query
+            $wp_query = new WP_Query( $args );?>
+            <tbody>
+              <?php
+              while( $wp_query->have_posts() )
+              {
+                $wp_query->the_post();
+              ?>
+              <tr>
+
+                <td class="columnOdd"> <?php the_field('movie_time'); ?></td>
+                <td class="columnEven"><a class="title ajaxContent cboxElement load_post" href="<?php echo the_permalink();?>"><?php the_title();?></a></td>
+              </tr>
+              <?php }?>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     <!-- <div class="schedule_week">
       <div class="btn_week selected"><span>This Week</span>
         <div class="schedule_left">
@@ -183,7 +186,5 @@
 
       
   </div>
-</div>
-    </div>
 </div>
 <?php get_footer();?> 

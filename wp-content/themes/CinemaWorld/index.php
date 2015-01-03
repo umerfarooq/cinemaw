@@ -55,7 +55,8 @@
                     ?>
                     
                     <?php 
-                        if(the_field('movie_image_source') == 'file') {
+                        $source = get_field('movie_image_source');
+                        if( $source == 'file') {
                             $quoted_image = "'".get_field('movie_image_file')."'";
                             $image = get_field('movie_image_file');                            
                         } else {

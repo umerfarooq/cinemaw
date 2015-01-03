@@ -15,8 +15,10 @@ jQuery(document).ready(function($){
      $.post(link.attr("href"), {
           static_page: 1
         }, function(data) {
-           $(".detail").html($(data));
-             $("#movie_detail").popup('show');
+          $(".detail").html($(data));
+          $('#movie_detail').removeClass('navtype');
+          $('#movie_detail').addClass('light');
+          $("#movie_detail").popup('show');
         }
       ); 
     }else if (link.hasClass('nav-link')) {
@@ -44,9 +46,10 @@ jQuery(document).ready(function($){
     $.post(link.attr("href"), {
         post_expander: 1
       }, function(data) {
-        // link.parents(".entry").html($(data));
-         $(".detail").html($(data));
-           $("#movie_detail").popup('show');
+          $(".detail").html($(data));
+          $('#movie_detail').removeClass('navtype');
+          $('#movie_detail').addClass('light');
+          $("#movie_detail").popup('show');
       }
     );};
     return false;
@@ -54,14 +57,12 @@ jQuery(document).ready(function($){
   
   //
   // Schedule calendar actions
-  //
-  $('#week_day').click(function(){
-      $('#shedule_right').show();      
-    });
-  
+  //  
   $('.btn_week').click(function(){
+    var week_number = $(this).data('week-number');
+    $('.schedule_date > li').removeClass('show').addClass('hide');
+    $(".schedule_date > li[data-week-number='"+week_number+"']").removeClass('hide').addClass('show');
 
-    // alert($(this).find('div').attr('class'));
     $(this).siblings('.selected').removeClass('selected');
     $(this).addClass('selected');
     sb = $(this).siblings('.btn_week').find('div').not('.hide');
