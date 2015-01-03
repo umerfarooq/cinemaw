@@ -36,11 +36,32 @@ Author URI: http://xplus3.net/
                 </a>
             </p>
             <a href="JavaScript:void(0);" id="popout_cross" class="movie_detail_close"></a>
-<?php   }
-    }
 
+            <script type="text/javascript">
+              jQuery(document).ready(function($){                
+                jQuery.cachedScript = function( url, options ) {
+                  // Allow user to set any option except for dataType, cache, and url
+                  options = $.extend( options || {}, {
+                    dataType: "script",
+                    cache: true,
+                    url: url
+                  });
+                  // Use $.ajax() since it is more flexible than $.getScript
+                  // Return the jqXHR object so we can chain callbacks
+                  return jQuery.ajax( options );
+                };
+                // Usage
+                $.cachedScript( "<?php echo plugins_url(),'/wonderplugin-lightbox/engine/wonderpluginlightbox.js';?>" ).done(function( script, textStatus ) {
+                  console.log( textStatus );
+                });
+              });
+            </script>
+<?php   
+        }
+    }
     die();
 }?>
+
 <?php function post_expander_show_post (  ) {
   if ( have_posts() ) {
     
