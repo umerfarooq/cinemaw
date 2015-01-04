@@ -147,6 +147,7 @@ ob_start();
       ?>
       <tbody>
         <?php
+        if($wp_query->have_posts()){
         // loop
         while( $wp_query->have_posts() )
         {
@@ -156,7 +157,12 @@ ob_start();
           <td class="columnOdd"> <?php the_field('movie_time'); ?></td>
           <td class="columnEven"><a class="title load_post" href="<?php the_permalink();?>"><?php the_title();?></a></td>
         </tr>
-        <?php }?>
+        <?php }
+      } else { ?>
+        <tr>
+          <td class="notice"> <?php the_field('notice'); ?></td>
+        </tr>
+      <?php } ?>
       </tbody>
     </table>
     <script type="text/javascript">
