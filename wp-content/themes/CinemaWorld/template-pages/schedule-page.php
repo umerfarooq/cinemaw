@@ -73,16 +73,23 @@
             $wp_query = new WP_Query( $args );?>
             <tbody>
               <?php
-              while( $wp_query->have_posts() )
-              {
-                $wp_query->the_post();
-              ?>
-              <tr>
+              if( $wp_query->have_posts() ) {
+                while( $wp_query->have_posts() ) {
+                  $wp_query->the_post();
+                ?>
+                <tr>
 
-                <td class="columnOdd"> <?php the_field('movie_time'); ?></td>
-                <td class="columnEven"><a class="title ajaxContent cboxElement load_post" href="<?php echo the_permalink();?>"><?php the_title();?></a></td>
-              </tr>
-              <?php }?>
+                  <td class="columnOdd"> <?php the_field('movie_time'); ?></td>
+                  <td class="columnEven"><a class="title ajaxContent cboxElement load_post" href="<?php echo the_permalink();?>"><?php the_title();?></a></td>
+                </tr>
+              <?php 
+                }
+              } else { ?>
+                <tr>
+                  <td class="notice"> <?php the_field('notice'); ?></td>
+                </tr>
+              <?php }
+              ?>
               </tbody>
             </table>
           </div>
