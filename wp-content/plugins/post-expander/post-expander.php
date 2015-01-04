@@ -12,7 +12,7 @@ ob_start();
         
         while (have_posts()) { 
             the_post(); ?>
-            <h3 class="privacy-policy-title"><?php the_field('title'); ?></h3>
+            <h1 class="privacy-policy-title"><?php the_field('title'); ?></h1>
             <p class="privacy-policy-description"><?php the_content(); ?></p>
             <a href="JavaScript:void(0);" id="popout_cross" class="movie_detail_close"></a>
 
@@ -27,7 +27,7 @@ ob_start();
         
         while (have_posts()) {
         the_post(); ?>
-            <h3><?php the_field('title'); ?></h3>
+            <h1><?php the_field('title'); ?></h1>
             <p><?php the_field('description'); ?></p>
             <p>
                 <a href='<?php echo the_field("trailer_path")?>' class="wplightbox" data-width="640" data-height="360" >

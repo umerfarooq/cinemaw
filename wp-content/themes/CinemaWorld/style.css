@@ -191,7 +191,9 @@ nav.main-nav ul li a:hover , nav.main-nav ul li a:focus {
 	margin-bottom: 5%;
 }
 
-/*Style custom popup*/
+/*...........................*/
+/* Popups */
+
 #movie_detail {
 	transform: scale(0.8);
 }
@@ -210,23 +212,6 @@ nav.main-nav ul li a:hover , nav.main-nav ul li a:focus {
 	position: absolute;
 }
 
-/* scheduler page*/
-div#scheduler {
-	background-color: black;
-	color: #fff;
-	width: 55%;
-	max-height: 65%;
-	height: auto;
-	left: 15%;
-	overflow: scroll;
-	padding:2%;
-}
-	.scheduler-page-title {
-		color: #ffbf00;
-		
-	}
-
-/* page popup*/
 .popup {
 	background-color: black;
 	color: #fff;
@@ -239,9 +224,9 @@ div#scheduler {
 	padding: 2% !important;
 }
 
-.popup h3 {
+.popup h1 {
 	color: #ffbf00;
-	margin: 0;
+	margin: 0 0 3% 0;
 }
 
 .popup.light {
@@ -249,7 +234,7 @@ div#scheduler {
 	max-height: 90%;
 }
 
-.popup.light, .popup.light h3 {
+.popup.light, .popup.light h1 {
 	color: black;
 }
 
@@ -279,7 +264,8 @@ div#scheduler {
 	cursor: pointer;
 }
 
-/*seach form style*/
+/*...........................*/
+/* Search */
 
 .result-notice {
 	color: white;
@@ -318,76 +304,68 @@ input#search_form_field {
 	height: 10px;
 }
 
-/*slider*/
-.amazingslider-box-2 {
-	border: none !important;
-}
 
+/*...........................*/
+/* Content Pages: About, Subscribe; */
 
-/*subscribe && about page */
 .about-page {
 	margin-top: 7%;
 }
+
 .subscribe-page {
 	margin-top: 7%;
 }
+
 .subscribe-page h2 ,.about-page h2{
 	color: #ffbf00 ;
 }
+
 .subscribe-page p , .about-page p {
 	color: #ffffff;
 	font-size: 15px;
 }
-nav.subscribe-nav ul
-{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    width: 40%;
+
+nav.subscribe-nav ul {
+  margin: 0; 
+  padding: 0;
+  list-style: none;
+  width: 40%;
 }
 
-nav.subscribe-nav ul li
-{
-    background-color: #424242;
-
-    position: relative;
+nav.subscribe-nav ul li {
+  background-color: #424242;
+  position: relative;
 }
 
-
-nav.subscribe-nav ul >li> a
-{
-    text-decoration: none;
-    color: #ffbf00 ;
-    display: block;
-    padding-top: 0px;
-    padding-bottom: 11px;
-    text-align: center;
-    font-size: 15px;
-    /*margin-top: -5px;*/
+nav.subscribe-nav ul >li> a {
+  text-decoration: none;
+  color: #ffbf00 ;
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 11px;
+  text-align: center;
+  font-size: 15px;
 }
 
-nav.subscribe-nav ul li a:hover,nav.subscribe-nav ul li a:after
-{
-    background: #424242 !important;
-    color: #ffffff;
+nav.subscribe-nav ul li a:hover,nav.subscribe-nav ul li a:after {
+  background: #424242 !important;
+  color: #ffffff;
 }
+
 nav.subscribe-nav ul li a:focus {
 	color: #ffffff;
-    background: #424242 !important;
-
+  background: #424242 !important;
 }
 
-
-    nav.subscribe-nav ul ul li a, nav.subscribe-nav ul ul li a:hover
-    {
-        background: #424242;
-        color: #ffffff;
-    }
+nav.subscribe-nav ul ul li a, nav.subscribe-nav ul ul li a:hover
+{
+    background: #424242;
+    color: #ffffff;
+}
 
 nav.subscribe-nav ul ul
 {
     width: 80%;
-    /*display: block;*/
     position: absolute;
     margin-left: 102%;
     top: -2px;
@@ -426,7 +404,24 @@ nav.subscribe-nav ul ul
 	opacity: 0.6;
 }
 
-/*Scheduler style*/
+/*...........................*/
+/* Scheduler */
+
+div#scheduler {
+	background-color: black;
+	color: #fff;
+	width: 55%;
+	max-height: 65%;
+	height: auto;
+	left: 15%;
+	overflow: scroll;
+	padding:2%;
+}
+
+.scheduler-page-title {
+	color: #ffbf00;		
+}
+
 .schedule-container {
 	background-color: black;
 	padding: 1%;
