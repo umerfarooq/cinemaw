@@ -15,6 +15,7 @@
     <?php wp_head(); ?>
     <link href="<?php bloginfo('template_url'); ?>/bootstrap/css/owl.carousel.css" rel="stylesheet">
     <link href="<?php bloginfo('template_url'); ?>/bootstrap/css/owl.theme.css" rel="stylesheet">
+    <link href="<?php bloginfo('template_url'); ?>/bootstrap/css/font-awesome.min.css" rel="stylesheet">
     <script src="<?php bloginfo('template_url'); ?>/bootstrap/js/jquery.popupoverlay.js"></script>
     <script src="<?php bloginfo('template_url'); ?>/bootstrap/js/jquery.backstretch.min.js"></script>
     <script src="<?php bloginfo('template_url'); ?>/bootstrap/js/owl.carousel.min.js"></script>

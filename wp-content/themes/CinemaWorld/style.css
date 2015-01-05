@@ -100,11 +100,11 @@ footer nav ul li a:hover,footer nav ul li a:focus {
 	background:transparent !important;
 }
 
-.social-icons nav ul li a:hover {
+/*.social-icons nav ul li a:hover {
 	background-color: #eee !important;
 	text-decoration: none;
 }
-
+*/
 .footer-nav .nav > li > a:hover {
 	color: #ffbf00 !important;
 }
@@ -202,14 +202,36 @@ nav.main-nav ul li a:hover , nav.main-nav ul li a:focus {
   transform: scale(1);
 }
 
-#popout_cross{
-	background: url(bootstrap/img/popout-cross-icon.png) no-repeat;
-	width: 18px;
-	height: 17px;
-	top: 1%;
-	right: 1%;
-	z-index: 1000111;
-	position: absolute;
+.mfp-close {
+	color: #333333;
+	background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    box-shadow: none;
+    cursor: pointer;
+    display: block;
+    outline: medium none;
+    overflow: visible;
+    padding: 0;
+    z-index: 1046;
+    font-family: Arial,Baskerville,monospace;
+    font-size: 28px;
+    font-style: normal;
+    height: 44px;
+    line-height: 44px;
+    opacity: 0.65;
+    padding: 0 0 18px 10px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    text-decoration: none;
+    top: 0;
+    width: 44px;
+}
+.mfp-close:hover {
+	opacity: 1 !important;
+}
+.nav-popup-close{
+	color: #ffffff;
 }
 
 .popup {
@@ -219,7 +241,7 @@ nav.main-nav ul li a:hover , nav.main-nav ul li a:focus {
 	min-height: 30%;
 	max-height: 70%;
 	height: auto;
-	left: 15%;
+	/*left: 15%;*/
 	overflow: auto;
 	padding: 2% !important;
 }
@@ -240,8 +262,8 @@ nav.main-nav ul li a:hover , nav.main-nav ul li a:focus {
 
 .popup.navtype {
 	left: unset;
-	right: 28%;
-	bottom: 16%;
+	/*right: 28%;*/
+	bottom: 5%;
 	background-color: rgba(0, 0, 0 , 0.55);
 	width: 35%;
 	min-height: 25%;
@@ -296,6 +318,7 @@ input#search_form_field {
 #search_image {
 	height: 21px;
 	width: 16px;
+	margin: 0 0 -3px 3px;
 }
 .search-header-image {
 	margin-bottom:-2%;
@@ -335,6 +358,9 @@ nav.subscribe-nav ul {
 nav.subscribe-nav ul li {
   background-color: #424242;
   position: relative;
+}
+nav.subscribe-nav ul li:first-child {
+	padding-top:5px;
 }
 
 nav.subscribe-nav ul >li> a {
@@ -571,4 +597,66 @@ div.schedule_right div.schedule_timetable table tr.even {
   font-size: 16px;
 	padding: 1%;
   text-align: left;
+}
+
+/* vdieo lightbox*/
+div#html5-image {
+	height: 376px !important;
+	width: 656px !important;
+	padding: 0 !important;
+}
+
+div.thumb-nav {
+	background-color: rgba(0, 0, 0, 0.7);
+	/*opacity: 0.7;*/
+}
+
+/*social icons*/
+/*.fa-fw {
+    text-align: center;
+    width: 1.28571em;
+}
+.fa-lg {
+    font-size: 1.33333em;
+    line-height: 0.75em;
+    vertical-align: -15%;
+}
+.fa {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-feature-settings: normal;
+    font-kerning: auto;
+    font-language-override: normal;
+    font-size: inherit;
+    font-size-adjust: none;
+    font-stretch: normal;
+    font-style: normal;
+    font-synthesis: weight style;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-rendering: auto;
+}
+*/div.social-icons nav ul li a {
+    border: 2px solid #666;
+    border-radius: 5px;
+    color: #666;
+    padding: 8px 3px !important;
+    text-decoration: none;
+    font-size: 16px;
+}
+div.social-icons nav ul li a:hover, div.social-icons nav ul li a:focus {
+	color: #ffffff;
+	background: transparent !important;
+	border-color: #ffffff;
+}
+div.social-icons nav ul li {
+    display: inline-block;
+    min-height: 32px;
+    margin-right: 4px;
+}
+div.social-icons nav ul{ 
+	list-style: outside none none;
+    margin: 10px 0 8px;
+    padding: 0;
 }

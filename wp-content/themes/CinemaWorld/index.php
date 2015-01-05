@@ -1,4 +1,4 @@
-
+    
 <?php
 /**
  * Description: Default Index template to display loop of blog posts
@@ -19,7 +19,7 @@
     <div class='col-lg-4 col-lg-offset-7' id='custom-caption'></div>
 </div>
 
-<div class='row'>
+<div class='row thumb-nav'>
     <div class='col-lg-10 col-lg-offset-1'>
         <div id="thumbnails" class="owl-carousel owl-theme">
             <?php
@@ -31,12 +31,12 @@
                     'meta_query' => array(
                         'relation' => 'OR', // Optional, defaults to "AND"
                         array(
-                            'key' => 'movie_image_file',
+                            'key' => 'thumbnail_file',
                             'value' => '',
                             'compare' => '!='
                         ),
                         array(
-                            'key' => 'movie_image_url',
+                            'key' => 'thumbnail_url',
                             'value' => '',
                             'compare' => '!='
                         )
@@ -55,13 +55,13 @@
                     ?>
                     
                     <?php 
-                        $source = get_field('movie_image_source');
+                        $source = get_field('thumbnail_image_source');
                         if( $source == 'file') {
                             $quoted_image = "'".get_field('movie_image_file')."'";
-                            $image = get_field('movie_image_file');                            
+                            $image = get_field('thumbnail_file');                            
                         } else {
                             $quoted_image = "'".get_field('movie_image_url')."'"; 
-                            $image = get_field('movie_image_url');
+                            $image = get_field('thumbnail_url');
                         }   
                         $images[] = $quoted_image;                     
                     ?>

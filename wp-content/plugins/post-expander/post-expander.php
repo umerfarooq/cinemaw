@@ -14,7 +14,8 @@ ob_start();
             the_post(); ?>
             <h1 class="privacy-policy-title"><?php the_field('title'); ?></h1>
             <p class="privacy-policy-description"><?php the_content(); ?></p>
-            <a href="JavaScript:void(0);" id="popout_cross" class="movie_detail_close"></a>
+            <button class="mfp-close movie_detail_close" type="button" title="Close (Esc)">×</button>
+            <!-- <a href="JavaScript:void(0);" id="popout_cross" class="movie_detail_close"></a> -->
 
 <?php   }
     }
@@ -37,7 +38,8 @@ ob_start();
                     <?php } ;?>
                 </a>
             </p>
-            <a href="JavaScript:void(0);" id="popout_cross" class="movie_detail_close"></a>
+            <button class="mfp-close movie_detail_close nav-popup-close" type="button" title="Close (Esc)">×</button>
+            <!-- <a href="JavaScript:void(0);" id="popout_cross" class="movie_detail_close"></a> -->
 
             <script type="text/javascript">
               jQuery(document).ready(function($){                
@@ -71,11 +73,11 @@ ob_start();
       the_post();
       $id=(string)get_the_ID(); 
 
-      $source = get_field('movie_image_source');
+      $source = get_field('popup_image_source');
       if( $source == 'file') {
-          $image = get_field('movie_image_file');                            
+          $image = get_field('popup_image_file');                            
       } else {
-          $image = get_field('movie_image_url');
+          $image = get_field('popup_image_url');
       }  
       ?>
       <div>
@@ -115,7 +117,8 @@ ob_start();
               <div class='col-lg-2'>Synopsis : </div>
               <div class='col-lg-10'><?php the_field('movie_synopsis');?></div>
           </div>
-          <a href="JavaScript:void(0);" id="popout_cross" class="movie_detail_close"></a>
+          <button class="mfp-close movie_detail_close" type="button" title="Close (Esc)">×</button>
+          <!-- <a href="JavaScript:void(0);" id="popout_cross" class="movie_detail_close"></a> -->
       </div>
   <?php 
       }

@@ -87,7 +87,7 @@ jQuery(document).ready(function($){
     scrollPerPage: true,
     rewindNav : true,
     pagination: false,
-    slideSpeed: 800,
+    slideSpeed: 1500,
     responsive: true,
     lazyLoad: true 
   });
