@@ -28,7 +28,8 @@
           <ul class="schedule_date">
           <?php
             $aDates = array();
-            $first_date = date('Y-m-01',strtotime('this month'));
+            // $first_date = date('Y-m-01',strtotime('this month'));
+            $first_date = date('Y-m-d', strtotime('last monday', strtotime('tomorrow')));
 
             $oStart = new DateTime($first_date);
             $oEnd = clone $oStart;
@@ -38,13 +39,21 @@
               $aDates[] = $oStart->format('Y-m-d D');
               $oStart->add(new DateInterval("P1D"));
             }
-            for ($i=0; $i < date('t'); $i++) { ?>
-             <li class="<?php echo ( (week_number($aDates[$i]) == 1) ? 'show' : 'hide'); ?> <?php echo ($aDates[$i] == date('Y-m-d D')) ? 'selected' : '' ?>" data-week-number="<?php echo week_number($aDates[$i]); ?>">
-              <a class="load_post date-link" data-date="<?php echo date('d/m/Y' ,strtotime(substr($aDates[$i],0,10))); ?>" href="<?php echo get_permalink(get_page_by_title('schedule')); ?>">
-                <?php print $aDates[$i].'<br>';?>
-              </a>
-            </li>
-            <?php }
+
+            $week_number = 1;
+            for ($i=0; $i < date('t'); $i++) { 
+              if( (($week_number*7)-1) < $i ) {
+                $week_number++;
+              } 
+              
+            ?>
+              <li class="<?php echo ( ($week_number == 1) ? 'show' : 'hide'); ?> <?php echo ($aDates[$i] == date('Y-m-d D')) ? 'selected' : '' ?>" data-week-number="<?php echo $week_number; ?>">
+                <a class="load_post date-link" data-date="<?php echo date('d/m/Y' ,strtotime(substr($aDates[$i],0,10))); ?>" href="<?php echo get_permalink(get_page_by_title('schedule')); ?>">
+                  <?php print $aDates[$i].'<br>';?>
+                </a>
+              </li>
+            <?php
+            }
             ?>
           </ul>
         </div>
