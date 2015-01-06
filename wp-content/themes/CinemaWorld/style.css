@@ -511,7 +511,7 @@ div.schedule_week div.selected span{
 div.schedule_right div.schedule_timetable {
     background: none repeat scroll 0 0 #444;
     border: 5px solid #333;
-    min-height: 314px;
+    min-height: 23em;
     color: #fff;
 }
 

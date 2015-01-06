@@ -28,7 +28,8 @@
           <ul class="schedule_date">
           <?php
             $aDates = array();
-            $first_date = date('Y-m-01',strtotime('this month'));
+            // $first_date = date('Y-m-01',strtotime('this month'));
+            $first_date = date('Y-m-d', strtotime('last monday', strtotime('tomorrow')));
 
             $oStart = new DateTime($first_date);
             $oEnd = clone $oStart;
@@ -38,13 +39,21 @@
               $aDates[] = $oStart->format('Y-m-d D');
               $oStart->add(new DateInterval("P1D"));
             }
-            for ($i=0; $i < date('t'); $i++) { ?>
-             <li class="<?php echo ( (week_number($aDates[$i]) == 1) ? 'show' : 'hide'); ?> <?php echo ($aDates[$i] == date('Y-m-d D')) ? 'selected' : '' ?>" data-week-number="<?php echo week_number($aDates[$i]); ?>">
-              <a class="load_post date-link" data-date="<?php echo date('d/m/Y' ,strtotime(substr($aDates[$i],0,10))); ?>" href="<?php echo get_permalink(get_page_by_title('schedule')); ?>">
-                <?php print $aDates[$i].'<br>';?>
-              </a>
-            </li>
-            <?php }
+
+            $week_number = 1;
+            for ($i=0; $i < date('t'); $i++) { 
+              if( (($week_number*7)-1) < $i ) {
+                $week_number++;
+              } 
+              
+            ?>
+              <li class="<?php echo ( ($week_number == 1) ? 'show' : 'hide'); ?> <?php echo ($aDates[$i] == date('Y-m-d D')) ? 'selected' : '' ?>" data-week-number="<?php echo $week_number; ?>">
+                <a class="load_post date-link" data-date="<?php echo date('d/m/Y' ,strtotime(substr($aDates[$i],0,10))); ?>" href="<?php echo get_permalink(get_page_by_title('schedule')); ?>">
+                  <?php print $aDates[$i].'<br>';?>
+                </a>
+              </li>
+            <?php
+            }
             ?>
           </ul>
         </div>
@@ -94,104 +103,7 @@
             </table>
           </div>
         </div>
-      </div>
-    <!-- <div class="schedule_week">
-      <div class="btn_week selected"><span>This Week</span>
-        <div class="schedule_left">
-          <ul class="schedule_date">
-            <?php $weekModifier = 0;
-              $date = new DateTime();
-              if($date->format('N') !== 1) {
-                  $date->sub(new DateInterval('P'. $date->format('N') . 'D'));
-              }
-              $interval = new DateInterval('P'.abs($weekModifier).'W');
-              if($weekModifier > 0) {
-                  $date->add($interval);  
-              } else {
-                  $date->sub($interval);  
-              }
-              for($i = 1; $i <= 7; $i++) { ?>
-                <?php $day = $date->add(new DateInterval('P1D'))->format('Y-m-d D') ; ?>
-                
-                <li class="<?php echo ($day == date('Y-m-d D')) ? 'selected' : '' ?>"><a class="load_post date-link" data-date="<?php echo $date->format('d/m/Y'); ?>" href="<?php echo get_permalink(get_page_by_title('schedule')); ?>"><?php echo $day; ?></a></li>
-                
-
-              <?php }
-              ?>
-          </ul>
-        </div>
-      </div> &nbsp;
-      <div class="btn_week"><span>+1</span>
-        <div class="schedule_left hide">
-          <ul class="schedule_date">
-            <?php $weekModifier = 1;
-              $date = new DateTime();
-              if($date->format('N') !== 1) {
-                  $date->sub(new DateInterval('P'. $date->format('N') . 'D'));
-              }
-              $interval = new DateInterval('P'.abs($weekModifier).'W');
-              if($weekModifier > 0) {
-                  $date->add($interval);  
-              } else {
-                  $date->sub($interval);  
-              }
-              for($i = 1; $i <= 7; $i++) { ?>
-                <?php $day = $date->add(new DateInterval('P1D'))->format('Y-m-d D') ; ?>
-                <li class="<?php echo ($day == date('Y-m-d D')) ? 'selected' : '' ?>"><a class="load_post" data-date="<?php echo substr($day,0,10) ;?>" href="<?php echo get_permalink( get_page_by_path( 'schedule' ) );?>"><?php echo $day; ?></a></li>
-              <?php }
-              ?>
-          </ul>
-        </div>
-      </div> &nbsp;
-      <div class="btn_week"><span>+2</span>
-        <div class="schedule_left hide">
-          <ul class="schedule_date">
-            <?php $weekModifier = 2;
-              $date = new DateTime();
-              if($date->format('N') !== 1) {
-                  $date->sub(new DateInterval('P'. $date->format('N') . 'D'));
-              }
-              $interval = new DateInterval('P'.abs($weekModifier).'W');
-              if($weekModifier > 0) {
-                  $date->add($interval);  
-              } else {
-                  $date->sub($interval);  
-              }
-              for($i = 1; $i <= 7; $i++) { ?>
-                <?php $day = $date->add(new DateInterval('P1D'))->format('Y-m-d D') ; ?>
-                <li class="<?php echo ($day == date('Y-m-d D')) ? 'selected' : '' ?>"><a class="load_post" data-date="<?php echo substr($day,0,10) ;?>" href="<?php echo get_permalink( get_page_by_path( 'schedule' ) );?>"><?php echo $day; ?></a></li>
-              <?php }
-              ?>
-          </ul>
-        </div>
-      </div> &nbsp;
-      <div class="btn_week"><span>+3</span>
-        <div class="schedule_left hide">
-          <ul class="schedule_date">
-            <?php $weekModifier = 3;
-              $date = new DateTime();
-              if($date->format('N') !== 1) {
-                  $date->sub(new DateInterval('P'. $date->format('N') . 'D'));
-              }
-              $interval = new DateInterval('P'.abs($weekModifier).'W');
-              if($weekModifier > 0) {
-                  $date->add($interval);  
-              } else {
-                  $date->sub($interval);  
-              }
-              for($i = 1; $i <= 7; $i++) { ?>
-                <?php $day = $date->add(new DateInterval('P1D'))->format('Y-m-d D') ; ?>
-                <li class="<?php echo ($day == date('Y-m-d D')) ? 'selected' : '' ?>"><a class="load_post" data-date="<?php echo substr($day,0,10) ;?>" href="<?php echo get_permalink( get_page_by_title( 'schedule' ) );?>"><?php echo $day; ?></a></li>
-              <?php }
-              ?>
-          </ul>
-        </div>
-      </div> &nbsp;
-    </div> -->
-
-    
-
-      
+      </div>      
   </div>
 </div>
 <?php get_footer();?> 
