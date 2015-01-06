@@ -612,32 +612,7 @@ div.thumb-nav {
 }
 
 /*social icons*/
-/*.fa-fw {
-    text-align: center;
-    width: 1.28571em;
-}
-.fa-lg {
-    font-size: 1.33333em;
-    line-height: 0.75em;
-    vertical-align: -15%;
-}
-.fa {
-    display: inline-block;
-    font-family: FontAwesome;
-    font-feature-settings: normal;
-    font-kerning: auto;
-    font-language-override: normal;
-    font-size: inherit;
-    font-size-adjust: none;
-    font-stretch: normal;
-    font-style: normal;
-    font-synthesis: weight style;
-    font-variant: normal;
-    font-weight: normal;
-    line-height: 1;
-    text-rendering: auto;
-}
-*/div.social-icons nav ul li a {
+div.social-icons nav ul li a {
     border: 2px solid #666;
     border-radius: 5px;
     color: #666;
