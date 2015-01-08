@@ -36,7 +36,7 @@
             $oEnd->add(new DateInterval("P1M"));
 
             while($oStart->getTimestamp() < $oEnd->getTimestamp()) {
-              $aDates[] = $oStart->format('Y-m-d D');
+              $aDates[] = $oStart->format('d M Y D');
               $oStart->add(new DateInterval("P1D"));
             }
 
