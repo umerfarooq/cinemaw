@@ -226,10 +226,12 @@ ob_start();
             </div>
 
             <div class='col-lg-5 col-lg-offset-1'>
-                <a href='<?php echo the_field("video_url")?>' class="wplightbox" data-width="640" data-height="360" >
-                    <span class='caption-action trailer'  ></span>
-                    <label>Watch trailer</label>
-                </a>
+                <?php if(the_field('vedio_url')) {?>
+                  <a href='<?php echo the_field("video_url")?>' class="wplightbox" data-width="640" data-height="360" >
+                      <span class='caption-action trailer'  ></span>
+                      <label>Watch trailer</label>
+                  </a>
+                <?php };?>
             </div>
         </div>
 

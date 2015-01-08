@@ -11,6 +11,7 @@ Tags: responsive, custom, bootstrap
 /*...........................*/
 /* Imports */
 @import url('bootstrap/css/bootstrap.css'); 
+
 /*@import url('bootstrap/css/bootstrap-responsive.css'); */
 
 /*...........................*/
@@ -27,7 +28,18 @@ Tags: responsive, custom, bootstrap
   font-weight: normal;
   font-style: normal;
 }
-
+/*=====================*/
+@media only screen and (max-width: 810px) {
+  div.popup {
+    width: 90%!important;
+  }
+}
+@media only screen and (min-width: 1200px){
+	.main-nav ul {
+		margin-bottom: -10%;
+	}
+}
+/*===============*/
 html {
 	height: 100%;
 }
@@ -70,7 +82,10 @@ footer {
 
 /*...........................*/
 /* Navigations */
-
+.navbar-default {
+	background-color: transparent;
+	border-color: transparent;
+}
 .navbar {
 	margin-bottom: 0 !important;
 	min-height: 0;
@@ -79,6 +94,10 @@ footer {
 .navbar-nav > li > a {
 	color: #fff;
 	padding: 5px !important;
+}
+
+.footer-nav ul li a {
+	color: #fff !important;
 }
 
 .nav > ul {
