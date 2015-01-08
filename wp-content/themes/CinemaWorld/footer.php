@@ -1,7 +1,7 @@
 <footer class="row">
   <div class='col-lg-12'>
     <div class='row'>
-      <div class="col-lg-6 col-lg-offset-1">  
+      <div class="col-lg-6 col-sm-6 col-sm-offset-1 pull-left col-lg-offset-1">  
         <nav class="nav navbar navbar-default footer-nav">
           <div class="navbar-header">
             <button data-target=".navbar-1-collapse" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
@@ -26,23 +26,24 @@
         </nav>
       </div>
 
-      <div class="social-icons col-lg-4">
-        <nav class="nav navbar pull-right">
-          <ul class="nav navbar-nav">
-            <!-- <li><a href="https://www.facebook.com/cinemaworldasia" alt="CinemaWorld" target="blank"><img src="<?php bloginfo('template_directory'); ?>/bootstrap/img/fb-icon.png"></a></li> -->
-            <li><a href="https://www.facebook.com/cinemaworldasia" alt="CinemaWorld" target="blank"><i class="fa fa-facebook fa-lg fa-fw"></i></a></li>
-            <li><a href="https://twitter.com/CinemaWorldAsia" alt="CinemaWorld" target="blank"><i class="fa fa-twitter fa-lg fa-fw"></i></a></li>
-            <!-- <li><a href="https://twitter.com/CinemaWorldAsia" alt="CinemaWorld" target="blank"><img src="<?php bloginfo('template_directory'); ?>/bootstrap/img/twitter-icon.png"></a></li> -->
-            <li><a href="http://www.youtube.com/user/CinemaWorldAsia/" alt="CinemaWorld" target="blank"><i class="fa fa-youtube fa-lg fa-fw"></i></a></li>
-            <!-- <li><a href="http://www.youtube.com/user/CinemaWorldAsia/" alt="CinemaWorld" target="blank"><img src="<?php bloginfo('template_directory'); ?>/bootstrap/img/youtube-icon.png"></a></li> -->
-          </ul>
+      <div class="social-icons  pull-right col-lg-4 col-sm-5">
+        <nav class="nav navbar">
+          
+            <ul class="nav navbar-nav">
+              <!-- <li><a href="https://www.facebook.com/cinemaworldasia" alt="CinemaWorld" target="blank"><img src="<?php bloginfo('template_directory'); ?>/bootstrap/img/fb-icon.png"></a></li> -->
+              <li><a href="https://www.facebook.com/cinemaworldasia" alt="CinemaWorld" target="blank"><i class="fa fa-facebook fa-lg fa-fw"></i></a></li>
+              <li><a href="https://twitter.com/CinemaWorldAsia" alt="CinemaWorld" target="blank"><i class="fa fa-twitter fa-lg fa-fw"></i></a></li>
+              <!-- <li><a href="https://twitter.com/CinemaWorldAsia" alt="CinemaWorld" target="blank"><img src="<?php bloginfo('template_directory'); ?>/bootstrap/img/twitter-icon.png"></a></li> -->
+              <li><a href="http://www.youtube.com/user/CinemaWorldAsia/" alt="CinemaWorld" target="blank"><i class="fa fa-youtube fa-lg fa-fw"></i></a></li>
+              <!-- <li><a href="http://www.youtube.com/user/CinemaWorldAsia/" alt="CinemaWorld" target="blank"><img src="<?php bloginfo('template_directory'); ?>/bootstrap/img/youtube-icon.png"></a></li> -->
+            </ul>
         </nav>  
       </div>
     </div>
 
     <div class='row'>
-      <div class="col-lg-4 col-lg-offset-7">
-        <nav role="navigation" class="nav navbar navbar-default pull-right">
+      <div class="col-lg-5 col-lg-offset-7 col-sm-5 col-sm-offset-7 pull-left">
+        <nav role="navigation" class="nav navbar navbar-default">
           <div class="navbar-header">
             <button data-target=".navbar-2-collapse" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
               <span class="sr-only">Toggle navigation</span>

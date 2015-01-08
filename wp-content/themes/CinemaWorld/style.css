@@ -33,6 +33,24 @@ Tags: responsive, custom, bootstrap
   div.popup {
     width: 90%!important;
   }
+  
+}
+
+@media only screen and (max-width: 400px) {
+	footer .col-lg-6, footer .col-sm-6, footer .col-lg-4, footer .col-sm-5 {
+  	padding-right: 0 !important;
+  	padding-left: 0 !important;
+  }
+  .social-icons {
+  	margin-right: 0 !important;
+  	margin-left: 0 !important;
+  }
+  input#search_form_field {
+  	width: 125px;
+  }
+  .footer-nav ul li {
+  	margin-right: 0 !important;
+  }
 }
 @media only screen and (min-width: 1200px){
 	.main-nav ul {
