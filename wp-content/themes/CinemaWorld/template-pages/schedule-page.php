@@ -24,7 +24,7 @@
       </div>
 
       <div class="row">
-        <div class="schedule_left col-md-3">
+        <div class="schedule_left col-md-3 col-sm-4">
           <ul class="schedule_date">
           <?php
             $aDates = array();
@@ -47,7 +47,7 @@
               } 
               
             ?>
-              <li class="<?php echo ( ($week_number == 1) ? 'show' : 'hide'); ?> <?php echo ($aDates[$i] == date('Y-m-d D')) ? 'selected' : '' ?>" data-week-number="<?php echo $week_number; ?>">
+              <li class="<?php echo ( ($week_number == 1) ? 'show' : 'hide'); ?> <?php echo ($aDates[$i] == date('d M Y D')) ? 'selected' : '' ?>" data-week-number="<?php echo $week_number; ?>">
                 <a class="load_post date-link" data-date="<?php echo date('d/m/Y' ,strtotime(substr($aDates[$i],0,10))); ?>" href="<?php echo get_permalink(get_page_by_title('schedule')); ?>">
                   <?php print $aDates[$i].'<br>';?>
                 </a>
@@ -57,7 +57,7 @@
             ?>
           </ul>
         </div>
-        <div class="schedule_right col-md-9" >
+        <div class="schedule_right col-md-9 col-sm-8">
           <div class="schedule_timetable">
             <table class="table-striped" width="100%" cellpadding="0" border="0">
             <?php

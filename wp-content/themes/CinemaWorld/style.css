@@ -29,34 +29,7 @@ Tags: responsive, custom, bootstrap
   font-style: normal;
 }
 /*=====================*/
-@media only screen and (max-width: 810px) {
-  div.popup {
-    width: 90%!important;
-  }
-  
-}
 
-@media only screen and (max-width: 400px) {
-	footer .col-lg-6, footer .col-sm-6, footer .col-lg-4, footer .col-sm-5 {
-  	padding-right: 0 !important;
-  	padding-left: 0 !important;
-  }
-  .social-icons {
-  	margin-right: 0 !important;
-  	margin-left: 0 !important;
-  }
-  input#search_form_field {
-  	width: 125px;
-  }
-  .footer-nav ul li {
-  	margin-right: 0 !important;
-  }
-}
-@media only screen and (min-width: 1200px){
-	.main-nav ul {
-		margin-bottom: -10%;
-	}
-}
 /*===============*/
 html {
 	height: 100%;
@@ -671,4 +644,54 @@ div.social-icons nav ul{
 	list-style: outside none none;
     margin: 10px 0 8px;
     padding: 0;
+}
+
+@media only screen and (max-width: 810px) {
+  div.popup {
+    width: 90%!important;
+  }
+  
+}
+
+@media only screen and (max-width: 490px) {
+	footer .col-lg-6, footer .col-sm-6, footer .col-lg-4, footer .col-sm-5 {
+  	padding-right: 5px !important;
+  	padding-left: 5px !important;
+  }
+  .social-icons {
+  	margin-right: 0 !important;
+  	margin-left: 0 !important;
+  }
+  input#search_form_field {
+  	width: 125px;
+  }
+  .footer-nav ul li {
+  	margin-right: 0 !important;
+  }
+  div.schedule_right div.schedule_timetable table td.columnOdd {
+  	font-size: 13px;
+    padding: 2px 13px 2px 0;
+    width: 40%;
+  }
+  .schedule_left {
+  	display: inline-block;
+  	margin-top: 0 !important;
+  }
+  .schedule_right {
+  	display: inline-block;
+  }
+  div.schedule_right div.schedule_timetable table td.columnEven, div.schedule_right div.schedule_timetable table th.columnEven {
+  	font-size: 13px !important;
+    padding: 0 15px 0 30px !important;
+    width: 60% !important;
+  }
+  .col-md-9, .col-sm-8, .col-md-3, .col-sm-4 {
+  	padding-left: 5px !important;
+  	padding-right: 5px !important;
+  }
+}
+@media only screen and (min-width: 1200px){
+	.main-nav ul {
+		margin-bottom: -10%;
+	}
 }
