@@ -31,7 +31,7 @@ ob_start();
             <h1><?php the_field('title'); ?></h1>
             <p><?php the_field('description'); ?></p>
             <p>
-                <a href='<?php echo the_field("trailer_path")?>' class="wplightbox" data-width="640" data-height="360" >
+                <a href='<?php echo the_field("trailer_path")?>' class="wplightbox" data-width="860" data-height="480" >
                     <?php if(get_field('trailer_path')){?>
                     <span class='trailer'  ></span>
                     <label>Watch trailer</label>
@@ -82,8 +82,9 @@ ob_start();
       ?>
       <div>
           <div class='row'>
-              <div class='col-lg-12'>
+              <div class='col-lg-12 movie-popup-title'>
                   <h1><?php the_title();?></h1>
+                  <h4><?php if(get_field('movie_original_title')) { _e('(');the_field('movie_original_title'); _e(')');};?></h4>
               </div>
           </div>
 
@@ -113,16 +114,44 @@ ob_start();
               <div class='col-lg-10'><?php the_field('movie_duration');?></div>
           </div>
 
-          <div class="row" style='margin-bottom: 3%'>
+          <div class="row" style='margin-bottom: 2%'>
               <div class='col-lg-2'>Synopsis : </div>
               <div class='col-lg-10'><?php the_field('movie_synopsis');?></div>
           </div>
+
+          <div class="row" style='margin-bottom: 3%'>
+            <div class='col-lg-10 col-lg-offset-2'>
+              <?php if(get_field('video_url')) { ?>
+                <a href='<?php echo the_field("video_url")?>' class="wplightbox" data-width="860" data-height="480" >
+                  <span class='caption-action trailer'></span>
+                  <label>Watch trailer</label>
+                </a>
+              <?php }?>
+            </div>
+          
           <button class="mfp-close movie_detail_close" type="button" title="Close (Esc)">×</button>
           <!-- <a href="JavaScript:void(0);" id="popout_cross" class="movie_detail_close"></a> -->
       </div>
   <?php 
-      }
-    }
+      }?>
+      <script type="text/javascript">
+        jQuery.cachedScript = function( url, options ) {
+              // Allow user to set any option except for dataType, cache, and url
+              options = $.extend( options || {}, {
+                dataType: "script",
+                cache: true,
+                url: url
+              });
+              // Use $.ajax() since it is more flexible than $.getScript
+              // Return the jqXHR object so we can chain callbacks
+              return jQuery.ajax( options );
+            };
+            // Usage
+            $.cachedScript( "<?php echo plugins_url(),'/wonderplugin-lightbox/engine/wonderpluginlightbox.js';?>" ).done(function( script, textStatus ) {
+              console.log( textStatus );
+            });
+      </script>
+<?php }
   die();
 } ?>
 
@@ -213,7 +242,7 @@ ob_start();
 
         <div class='row caption-desc'>
             <div class='col-lg-12'>
-                <?php echo mb_strimwidth(get_field('movie_synopsis'), 0, 250, "");?>
+                <?php echo mb_strimwidth(get_field('movie_synopsis'), 0, 220, "...");?>
             </div>
         </div>
 
@@ -226,12 +255,12 @@ ob_start();
             </div>
 
             <div class='col-lg-5 col-lg-offset-1'>
-                <?php if(the_field('vedio_url')) {?>
-                  <a href='<?php echo the_field("video_url")?>' class="wplightbox" data-width="640" data-height="360" >
+                <?php if(get_field('video_url')) { ?>
+                  <a href='<?php echo the_field("video_url")?>' class="wplightbox" data-width="860" data-height="480" >
                       <span class='caption-action trailer'  ></span>
                       <label>Watch trailer</label>
                   </a>
-                <?php };?>
+                <?php }?>
             </div>
         </div>
 

@@ -37,6 +37,7 @@
 
             while($oStart->getTimestamp() < $oEnd->getTimestamp()) {
               $aDates[] = $oStart->format('d M Y D');
+              $date[] = $oStart ->format('d/m/Y');
               $oStart->add(new DateInterval("P1D"));
             }
 
@@ -48,7 +49,7 @@
               
             ?>
               <li class="<?php echo ( ($week_number == 1) ? 'show' : 'hide'); ?> <?php echo ($aDates[$i] == date('d M Y D')) ? 'selected' : '' ?>" data-week-number="<?php echo $week_number; ?>">
-                <a class="load_post date-link" data-date="<?php echo date('d/m/Y' ,strtotime(substr($aDates[$i],0,10))); ?>" href="<?php echo get_permalink(get_page_by_title('schedule')); ?>">
+                <a class="load_post date-link" data-date="<?php echo $date[$i]; ?>" href="<?php echo get_permalink(get_page_by_title('schedule')); ?>"> <!-- data-date priviosly used <?php echo date('d/m/Y' ,strtotime(substr($aDates[$i],0,10))); ?> -->
                   <?php print $aDates[$i].'<br>';?>
                 </a>
               </li>

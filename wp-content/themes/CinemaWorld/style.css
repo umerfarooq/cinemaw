@@ -188,8 +188,18 @@ nav.main-nav ul li a:hover , nav.main-nav ul li a:focus {
 #custom-caption .caption-action.trailer {
 	background-image: url('bootstrap/img/watch-trailer-icon.png'); 	
 }
-
-#custom-caption label {
+#movie_detail .caption-action.trailer{
+	background-image: url('bootstrap/img/watch-trailer-black.png'); 
+	display: block;
+    float: left;
+    height: 23px;
+    width: 23px;	
+}
+#movie_detail label {
+	font-size: 15px;
+	color: black !important;
+}
+#custom-caption label , #movie_detail label {
 	float: left;
 	color: #ffbf00;
 	font-weight: normal;
@@ -237,13 +247,23 @@ nav.main-nav ul li a:hover , nav.main-nav ul li a:focus {
     top: 0;
     width: 44px;
 }
+.lightbox-close-btn {
+	color: #ffffff !important;
+	top: -16px !important;
+	right: 5px !important;
+}
 .mfp-close:hover {
 	opacity: 1 !important;
 }
 .nav-popup-close{
 	color: #ffffff;
 }
-
+.movie-popup-title h1 {
+	margin-bottom: 0 !important;
+}
+.movie-popup-title h4 {
+	margin-top: 0 !important;
+}
 .popup {
 	background-color: black;
 	color: #fff;
@@ -611,8 +631,8 @@ div.schedule_right div.schedule_timetable table tr.even {
 
 /* vdieo lightbox*/
 div#html5-image {
-	height: 376px !important;
-	width: 656px !important;
+	height: 100% !important;
+	width: 100% !important;
 	padding: 0 !important;
 }
 
@@ -653,14 +673,15 @@ div.social-icons nav ul{
   
 }
 
-@media only screen and (max-width: 490px) {
+@media only screen and (max-width: 800px) {
 	footer .col-lg-6, footer .col-sm-6, footer .col-lg-4, footer .col-sm-5 {
-  	padding-right: 5px !important;
-  	padding-left: 5px !important;
+  	padding-right: 0px !important;
+  	padding-left: 0px !important;
   }
   .social-icons {
   	margin-right: 0 !important;
   	margin-left: 0 !important;
+  	float: right;
   }
   input#search_form_field {
   	width: 125px;
@@ -670,7 +691,7 @@ div.social-icons nav ul{
   }
   div.schedule_right div.schedule_timetable table td.columnOdd {
   	font-size: 13px;
-    padding: 2px 13px 2px 0;
+    padding: 2px 25px 2px 0;
     width: 40%;
   }
   .schedule_left {
@@ -682,7 +703,7 @@ div.social-icons nav ul{
   }
   div.schedule_right div.schedule_timetable table td.columnEven, div.schedule_right div.schedule_timetable table th.columnEven {
   	font-size: 13px !important;
-    padding: 0 15px 0 30px !important;
+    padding: 0 0 0 60px !important;
     width: 60% !important;
   }
   .col-md-9, .col-sm-8, .col-md-3, .col-sm-4 {

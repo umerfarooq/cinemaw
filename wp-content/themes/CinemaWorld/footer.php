@@ -26,8 +26,8 @@
         </nav>
       </div>
 
-      <div class="social-icons  pull-right col-lg-4 col-sm-5">
-        <nav class="nav navbar">
+      <div class="social-icons col-lg-4 col-sm-5">
+        <nav class="nav navbar pull-right">
           
             <ul class="nav navbar-nav">
               <!-- <li><a href="https://www.facebook.com/cinemaworldasia" alt="CinemaWorld" target="blank"><img src="<?php bloginfo('template_directory'); ?>/bootstrap/img/fb-icon.png"></a></li> -->
