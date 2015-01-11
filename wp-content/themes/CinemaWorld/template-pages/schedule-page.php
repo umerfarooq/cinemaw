@@ -15,7 +15,7 @@
 
     <div class='col-lg-8 schedule-container'>
       <div class="row">
-        <div class="schedule_week col-md-8 col-lg-offset-4">
+        <div class="schedule_week col-lg-8 col-lg-offset-4 col-md-8 col-md-offset-4 col-sm-8 col-sm-offset-4">
           <div class="btn_week selected" data-week-number="1"><span>This Week</span></div>
           <div class="btn_week" data-week-number="2"><span>+1</span></div>
           <div class="btn_week" data-week-number="3"><span>+2</span></div>

@@ -541,7 +541,7 @@ div.schedule_week div.selected span{
 div.schedule_right div.schedule_timetable {
     background: none repeat scroll 0 0 #444;
     border: 5px solid #333;
-    min-height: 23em;
+    min-height: 22em;
     color: #fff;
 }
 
@@ -691,25 +691,51 @@ div.social-icons nav ul{
   }
   div.schedule_right div.schedule_timetable table td.columnOdd {
   	font-size: 13px;
-    padding: 2px 25px 2px 0;
+    padding: 2px 15px 2px 0;
     width: 40%;
   }
   .schedule_left {
   	display: inline-block;
   	margin-top: 0 !important;
+  	width: 30%;
+  }
+  .schedule_left ul li a {
+  	font-size: 12px !important;
   }
   .schedule_right {
   	display: inline-block;
+  	width: 68%;
+  	max-height: 310px;
+  	overflow: auto;
   }
+
   div.schedule_right div.schedule_timetable table td.columnEven, div.schedule_right div.schedule_timetable table th.columnEven {
-  	font-size: 13px !important;
-    padding: 0 0 0 60px !important;
+  	font-size: 12px !important;
+    padding: 0 0 0 10px !important;
     width: 60% !important;
   }
   .col-md-9, .col-sm-8, .col-md-3, .col-sm-4 {
   	padding-left: 5px !important;
   	padding-right: 5px !important;
   }
+}
+
+@media only screen and (max-width: 300px) {
+	div.schedule_week div.btn_week {
+  	padding: 0 !important;
+  	margin-right: 0 !important;
+  }
+  div.schedule_week div.btn_week span {
+  	padding: 0 13px 0 3px !important;
+  	font-size: 15px !important;
+  }
+}
+@media only screen and (min-width: 240px) and (max-width: 310px) {
+  div.schedule_week div.btn_week {
+  	padding-left: 10px !important;
+  	margin-left: 2px;
+  }
+
 }
 @media only screen and (min-width: 1200px){
 	.main-nav ul {
