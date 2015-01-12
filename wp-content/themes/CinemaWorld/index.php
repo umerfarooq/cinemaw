@@ -24,7 +24,7 @@
         <div id="thumbnails" class="owl-carousel owl-theme">
             <?php
                 $args = array(
-                    'category_name' => 'movies',
+                    'category_name' => 'movies+home-movies',
                     'posts_per_page' => -1,
                     'post_status' => 'publish',
                     'post_type' => 'post',

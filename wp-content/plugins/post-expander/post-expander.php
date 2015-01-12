@@ -81,54 +81,61 @@ ob_start();
       }  
       ?>
       <div>
+          <?php if(get_the_title()) { ?>
           <div class='row'>
               <div class='col-lg-12 movie-popup-title'>
                   <h1><?php the_title();?></h1>
                   <h4><?php if(get_field('movie_original_title')) { _e('(');the_field('movie_original_title'); _e(')');};?></h4>
               </div>
           </div>
-
+          <?php } 
+          if($image) { ?>
           <div class='row'>
               <div class='col-lg-12'>
                   <img src="<?php echo $image; ?>" class="movie-image img-responsive" /></img>
               </div>
           </div>
-
+          <?php }
+          if(get_field('movie_country')) { ?>
           <div class="row">
               <div class='col-lg-2'>Country : </div>
               <div class='col-lg-10'><?php the_field('movie_country');?></div>
           </div>
-
+          <?php } 
+          if(get_field('movie_genre')) { ?>
           <div class="row">
               <div class='col-lg-2'>Genre : </div>
               <div class='col-lg-10'><?php the_field('movie_genre');?></div>
           </div>
-
+          <?php } 
+          if(get_field('movie_casts')) { ?>
           <div class="row">
               <div class='col-lg-2'>Cast / Director : </div>
               <div class='col-lg-10'><?php the_field('movie_casts');?></div>
           </div>
-
+          <?php }
+          if(get_field('movie_duration')) { ?>
           <div class="row">
               <div class='col-lg-2'>Duration : </div>
               <div class='col-lg-10'><?php the_field('movie_duration');?></div>
           </div>
-
+          <?php }
+          if(get_field('movie_synopsis')) { ?>
           <div class="row" style='margin-bottom: 2%'>
               <div class='col-lg-2'>Synopsis : </div>
               <div class='col-lg-10'><?php the_field('movie_synopsis');?></div>
           </div>
-
+          <?php }
+          if(get_field('video_url')) { ?>
           <div class="row" style='margin-bottom: 3%'>
             <div class='col-lg-10 col-lg-offset-2'>
-              <?php if(get_field('video_url')) { ?>
                 <a href='<?php echo the_field("video_url")?>' class="wplightbox" data-width="860" data-height="480" >
                   <span class='caption-action trailer'></span>
                   <label>Watch trailer</label>
                 </a>
-              <?php }?>
             </div>
-          
+          </div>
+          <?php }?>
           <button class="mfp-close movie_detail_close" type="button" title="Close (Esc)">×</button>
           <!-- <a href="JavaScript:void(0);" id="popout_cross" class="movie_detail_close"></a> -->
       </div>
