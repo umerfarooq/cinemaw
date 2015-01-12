@@ -181,6 +181,7 @@ ob_start();
             )
           )
         );
+        $array = array();
       // query
         $wp_query = new WP_Query( $args );
       ?>
@@ -191,12 +192,16 @@ ob_start();
         while( $wp_query->have_posts() )
         {
           $wp_query->the_post();
+          $time = get_field('movie_time');
+          
+          if(!in_array($time, $array)) {
           ?>
         <tr>
           <td class="columnOdd"> <?php the_field('movie_time'); ?></td>
           <td class="columnEven"><a class="title load_post" href="<?php the_permalink();?>"><?php the_title();?></a></td>
         </tr>
-        <?php }
+        <?php $array[]= $time;}
+        }
       } else { ?>
         <tr>
           <td class="notice"> <?php the_field('notice'); ?></td>
