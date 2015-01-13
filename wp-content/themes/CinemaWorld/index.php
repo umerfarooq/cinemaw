@@ -39,6 +39,16 @@
                             'key' => 'thumbnail_url',
                             'value' => '',
                             'compare' => '!='
+                        ),
+                        array(
+                            'key' => 'movie_image_file',
+                            'value' => '',
+                            'compare' => '!='
+                        ),
+                        array(
+                            'key' => 'movie_image_url',
+                            'value' => '',
+                            'compare' => '!='
                         )
                     )
                 );
@@ -63,6 +73,17 @@
                             $quoted_image = "'".get_field('movie_image_url')."'"; 
                             $image = get_field('thumbnail_url');
                         }   
+
+                        if(empty($image)) {
+                            $source = get_field('movie_image_source');
+                            if( $source == 'file') {
+                                $quoted_image = "'".get_field('movie_image_file')."'";
+                                $image = get_field('movie_image_file');                            
+                            } else {
+                                $quoted_image = "'".get_field('movie_image_url')."'"; 
+                                $image = get_field('movie_image_url');
+                            }   
+                        }
                         $images[] = $quoted_image;                     
                     ?>
                     
