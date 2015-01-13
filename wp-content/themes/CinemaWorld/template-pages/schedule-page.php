@@ -69,7 +69,7 @@
               'post_status' => 'publish',
               'posts_per_page'  => -1,
               'meta_key'    => 'movie_time',
-              'orderby'   => 'meta_value_num',
+              'orderby'   => substr('meta_value', 6, 7),
               'order'     => 'ASC',
               'meta_query' => array(
                 array(
@@ -78,8 +78,8 @@
                 )
               )
             );
-              $array = array();
-          // query
+            
+            $array = array();
             $wp_query = new WP_Query( $args );?>
             <tbody>
               <?php
