@@ -46,10 +46,14 @@ get_header(); ?>
                             <a href="<?php the_permalink(); ?>" title="<?php the_title();?>" class="load_post">
                                 <img src="<?php echo $image; ?>" class='img-responsive responsive_img' >
                                 <div class="caption">
-                                    <?php the_title();?>
-                                    <?php if(get_field('movie_original_title')){?>
-                                    (<?php the_field('movie_original_title');?>)
-                                    <?php } ;?>
+                                    <?php $title = get_the_title(); ?>
+                                    <?php $original_title = get_field('movie_original_title');?>
+
+                                    <?php if(empty($original_title)): ?>
+                                        <?php echo substr($title, 0, 50); ?>
+                                    <?php else: ?>
+                                        <?php echo substr($title.' ('.$original_title.')', 0,50) ?>
+                                    <?php endif; ?>
                                 </div>
                             </a>
                         </div>                
