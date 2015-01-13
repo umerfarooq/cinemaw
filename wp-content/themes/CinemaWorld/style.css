@@ -322,7 +322,9 @@ nav.main-nav ul li a:hover , nav.main-nav ul li a:focus {
 .result-notice {
 	color: white;
 }
-
+.result-notice p {
+	display: inline;
+}
 .result-item .thumbnail {
 	min-height: 160px;
 }

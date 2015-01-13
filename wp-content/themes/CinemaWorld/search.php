@@ -18,21 +18,25 @@ get_header(); ?>
     <?php if ($allsearch->have_posts()) : ?>
     
         <?php
+        $array = array();
         $key = wp_specialchars($s, 1);
-        $count = $allsearch->post_count; 
+        // $count = $allsearch->post_count; 
         _e('<div class="col-lg-11 col-lg-offset-1 result-notice"><h2>');
         _e('Showing results for ');
         _e('"');
         echo $key;
         _e('"'); 
-        _e(' &mdash; found ');
-        echo $count . ' '; 
+        _e(' &mdash; found <p>ad</p>'); 
         _e('movies</h2></div>');
         ?>
 
         <div class="col-lg-11 col-lg-offset-1 ">
             <div class='row'>
                 <?php while ($allsearch->have_posts()) : $allsearch->the_post(); 
+                  $wp_query->the_post();
+                  $title = get_the_title();
+          
+                  if(!in_array($title, $array)) {  
                     $source = get_field('movie_image_source');
                     if( $source == 'file') {
                         $image = get_field('movie_image_file');                            
@@ -58,7 +62,7 @@ get_header(); ?>
                             </a>
                         </div>                
                     </div>
-             
+                  <?php $array[]= $title; $count++; var_dump($count); } ?>
                 <?php endwhile;wp_reset_query(); ?>
             </div>
         </div>
@@ -71,5 +75,9 @@ get_header(); ?>
     <?php endif; ?>   
 
 </div>
+<script type="text/javascript">
+  var p=$('.result-notice').find('p');
+  p.html("<?php echo $count,' ';?>");
+</script>
  
 <?php get_footer(); ?>
