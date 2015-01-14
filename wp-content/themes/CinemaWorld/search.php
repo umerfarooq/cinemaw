@@ -62,7 +62,7 @@ get_header(); ?>
                             </a>
                         </div>                
                     </div>
-                  <?php $array[]= $title; $count++; var_dump($count); } ?>
+                  <?php $array[]= $title; $count++; } ?>
                 <?php endwhile;wp_reset_query(); ?>
             </div>
         </div>
