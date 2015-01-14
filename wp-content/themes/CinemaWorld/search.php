@@ -13,7 +13,7 @@ get_header(); ?>
 </div>
     
 <div class="row content">
-    <?php  $allsearch = &new WP_Query("s=$s&showposts=-1&category_name=movies");?>
+    <?php  $allsearch = &new WP_Query("s=$s&showposts=-1&category_name=movies&post_status=publish");?>
     <!-- LIST RESULTS -->
     <?php if ($allsearch->have_posts()) : ?>
     
@@ -42,7 +42,25 @@ get_header(); ?>
                         $image = get_field('movie_image_file');                            
                     } else {
                         $image = get_field('movie_image_url');
-                    }   
+                    }  
+
+                    if(empty($image)){
+                        $source = get_field('thumbnail_image_source');
+                        if( $source == 'file') {
+                            $image = get_field('thumbnail_file');                            
+                        } else {
+                            $image = get_field('thumbnail_url');
+                        }   
+                    } 
+
+                    if(empty($image)){
+                        $source = get_field('popup_image_source');
+                        if( $source == 'file') {
+                            $image = get_field('popup_image_file');                            
+                        } else {
+                            $image = get_field('popup_image_url');
+                        }   
+                    } 
                 ?>
               
                     <div class="col-sm-6 col-md-3 col-lg-2 result-item">
