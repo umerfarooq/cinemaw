@@ -34,7 +34,7 @@ ob_start();
                 <a href='<?php echo the_field("trailer_path")?>' class="wplightbox" data-width="860" data-height="480" >
                     <?php if(get_field('trailer_path')){?>
                     <span class='trailer'  ></span>
-                    <label>Watch trailer</label>
+                    <label class='trailer-label'>Watch trailer</label>
                     <?php } ;?>
                 </a>
             </p>

@@ -199,6 +199,9 @@ nav.main-nav ul li a:hover , nav.main-nav ul li a:focus {
 	font-size: 15px;
 	color: black !important;
 }
+#movie_detail label.trailer-label {
+	color: #ffbf00 !important;
+}
 #custom-caption label , #movie_detail label {
 	float: left;
 	color: #ffbf00;
