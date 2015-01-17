@@ -82,5 +82,5 @@
 /* preloading images */
 .owl-item.loading{
 	min-height: 150px;
-	background: url(../images/AjaxLoader.gif) no-repeat center center
+	background: url("../../bootstrap/img/AjaxLoader.gif") no-repeat center center
 }
