@@ -25,7 +25,7 @@
             <?php
                 $args = array(
                     'category_name' => 'home',
-                    'posts_per_page' => 1,
+                    'posts_per_page' => -1,
                     'post_status' => 'publish',
                     'post_type' => 'post',
                     'meta_query' => array(
@@ -37,16 +37,6 @@
                         ),
                         array(
                             'key' => 'thumbnail_url',
-                            'value' => '',
-                            'compare' => '!='
-                        ),
-                        array(
-                            'key' => 'movie_image_file',
-                            'value' => '',
-                            'compare' => '!='
-                        ),
-                        array(
-                            'key' => 'movie_image_url',
                             'value' => '',
                             'compare' => '!='
                         )
@@ -74,16 +64,6 @@
                             $image = get_field('thumbnail_url');
                         }   
 
-                        if(empty($image)) {
-                            $source = get_field('movie_image_source');
-                            if( $source == 'file') {
-                                $quoted_image = "'".get_field('movie_image_file')."'";
-                                $image = get_field('movie_image_file');                            
-                            } else {
-                                $quoted_image = "'".get_field('movie_image_url')."'"; 
-                                $image = get_field('movie_image_url');
-                            }   
-                        }
                         $images[] = $quoted_image;                     
                     ?>
                     
@@ -100,7 +80,7 @@
         
         <script type="text/javascript">
             jQuery(document).ready(function($){
-                $.backstretch([<?php echo $images; ?>], {duration: 40000000, lazyload: true});
+                $.backstretch([<?php echo $images; ?>], {duration: 40000000});
 
                 $(window).on("backstretch.after", function (e, instance, index) {
                     var post_url = $('.item').find('[data-id="'+index+'"]').attr('data-post-url');

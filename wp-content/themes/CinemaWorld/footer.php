@@ -67,14 +67,17 @@
     </div>
   </div>
 </footer>
-<?php include (TEMPLATEPATH . '/template-pages/static-page.php'); ?>  
 <?php wp_footer(); ?>
 </div> <!-- /container -->
 <div class="popup light" id="movie_detail">
   <div class="detail"></div> 
 </div>
-<script type="text/javascript">
-  $.backstretch("<?php the_field('image_url', get_page_by_path('home')->ID);?>"); 
-</script>
+<?php if($_SERVER['REQUEST_URI'] != '/') { ?>
+  <script type="text/javascript">
+    jQuery(document).ready(function($){
+      $.backstretch("<?php the_field('image_url', get_page_by_path('home')->ID);?>"); 
+    });
+  </script>
+<?php } ?>
 </body>
 </html>
