@@ -24,7 +24,7 @@
         <div id="thumbnails" class="owl-carousel owl-theme">
             <?php
                 $args = array(
-                    'category_name' => 'movies+home',
+                    'category_name' => 'home',
                     'posts_per_page' => -1,
                     'post_status' => 'publish',
                     'post_type' => 'post',
@@ -87,7 +87,7 @@
                         $images[] = $quoted_image;                     
                     ?>
                     
-                    <div class='item'><a class="thumb" data-id="<?php echo $imageIndex; ?>" data-post-url="<?php the_permalink(); ?>" href="JavaScript:void(0);"><img src="<?php echo $image; ?>" /></a></div>
+                    <div class='item'><a class="thumb" data-id="<?php echo $imageIndex; ?>" data-post-url="<?php the_permalink(); ?>" href="JavaScript:void(0);"><img class="lazyOwl" data-src="<?php echo $image; ?>" /></a></div>
                 <?php 
                     $imageIndex++;
                     }
@@ -100,7 +100,7 @@
         
         <script type="text/javascript">
             jQuery(document).ready(function($){
-                $.backstretch([<?php echo $images; ?>], {duration: 40000000});
+                $.backstretch([<?php echo $images; ?>], {duration: 40000000, lazyload: true});
 
                 $(window).on("backstretch.after", function (e, instance, index) {
                     var post_url = $('.item').find('[data-id="'+index+'"]').attr('data-post-url');
