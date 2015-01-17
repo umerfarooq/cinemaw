@@ -9,6 +9,7 @@ set :branch, 'master'
 set :deploy_via, :remote_cache
 set :copy_exclude, [".git", ".DS_Store", ".gitignore", ".gitmodules"]
 #set :ssh_options, {:forward_agent => true}
+# set ssh_options[:port] = 60022
 
 task :staging do
   set :deploy_to, "/home/umerf/www/cinemaworld"
@@ -22,14 +23,15 @@ task :staging do
 end
 
 task :production do
-  # set :deploy_to, "/home/85/04/1010485/divebarnyc/"
-  # set :location, "www.divebarnyc.com"
-  # role :web, location                         # Your HTTP server, Apache/etc
-  # role :app, location                          # This may be the same as your `Web` server
-  # role :db,  location, :primary => true
-  # #  server "www.divebar.bitbytez.com", :app
-  # set :user, "diveb75"
-  # set :password, Capistrano::CLI.password_prompt("#{fetch(:user, "server_user")} password: ")
+  set :ssh_options, {:port => 60022}
+  set :deploy_to, "/home/cinemaworld/public_html"
+  set :location, "cinemaworld.asia"
+  role :web, location                         # Your HTTP server, Apache/etc
+  role :app, location                          # This may be the same as your `Web` server
+  role :db,  location, :primary => true
+  #  server "www.divebar.bitbytez.com", :app
+  set :user, "cinemaworld"
+  set :password, Capistrano::CLI.password_prompt("#{fetch(:user, "server_user")} password: ")
 end
 
 desc "Symlink shared configs and folders on each release."

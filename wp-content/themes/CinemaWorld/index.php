@@ -25,7 +25,7 @@
             <?php
                 $args = array(
                     'category_name' => 'home',
-                    'posts_per_page' => -1,
+                    'posts_per_page' => 1,
                     'post_status' => 'publish',
                     'post_type' => 'post',
                     'meta_query' => array(
