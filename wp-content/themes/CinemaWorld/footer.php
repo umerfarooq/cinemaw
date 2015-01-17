@@ -74,9 +74,7 @@
 </div>
 <?php if($_SERVER['REQUEST_URI'] != '/') { ?>
   <script type="text/javascript">
-    jQuery(document).ready(function($){
-      $.backstretch("<?php the_field('image_url', get_page_by_path('home')->ID);?>"); 
-    });
+    $.backstretch("<?php the_field('image_url', get_page_by_path('home')->ID);?>"); 
   </script>
 <?php } ?>
 </body>
