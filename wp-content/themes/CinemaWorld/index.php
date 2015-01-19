@@ -28,6 +28,8 @@
                 'posts_per_page' => -1,
                 'post_status' => 'publish',
                 'post_type' => 'post',
+                'orderby'   => 'menu_order',
+                'order'     => 'ASC',
                 'meta_query' => array(
                         'relation' => 'OR', // Optional, defaults to "AND"
                         array(
