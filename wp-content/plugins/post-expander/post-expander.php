@@ -171,8 +171,7 @@ ob_start();
           'category_name' => 'movies',
           'post_status' => 'publish',
           'posts_per_page'  => -1,
-          'meta_key'    => 'movie_time',
-          'orderby'   => substr('meta_value', 6, 7),
+          'orderby'   => 'ID',
           'order'     => 'ASC',
           'meta_query' => array(
             array(
